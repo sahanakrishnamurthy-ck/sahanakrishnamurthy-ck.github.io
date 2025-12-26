@@ -1,134 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sahana Krishnamurthy</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Name | Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<header class="navbar">
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#work">Work</a>
-    <a href="#education">Education</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">YourName</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        </nav>
+    </header>
 
-<section id="home" class="hero">
-  <p>Hi, I am</p>
-  <h1>Sahana Krishnamurthy</h1>
-  <h2>Robotics & AI Engineer</h2>
-  <p>
-    I design and build intelligent robotic systems that integrate perception,
-    learning, and autonomous decision-making for real-world environments.
-  </p>
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+        <h1>Hello, I'm <span>Your Name</span></h1>
+        <p>A passionate developer building clean and modern web experiences.</p>
+        <a href="#projects" class="btn">View My Work</a>
+    </section>
 
-  <div class="links">
-    <a href="LINKEDIN_URL">LinkedIn</a>
-    <a href="GITHUB_URL">GitHub</a>
-    <a href="CV_URL">Download CV</a>
-  </div>
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="projects-container">
 
-  <p>📍 Stuttgart, Germany · ✉️ your-email</p>
-</section>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x250" alt="Project Image">
+                <h3>Project One</h3>
+                <p>A short description of your project goes here.</p>
+                <a href="#" class="btn-small">GitHub</a>
+                <a href="#" class="btn-small">Live Demo</a>
+            </div>
 
-<section id="about">
-  <h2>About</h2>
-  <p>
-    I am a Robotics and AI Engineer with a strong interest in autonomous systems,
-    computer vision, and intelligent robotics.
-  </p>
-  <p>
-    My work focuses on ROS2-based systems, SLAM, multi-sensor fusion, and deep
-    learning for perception in industrial and research environments.
-  </p>
-</section>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x250" alt="Project Image">
+                <h3>Project Two</h3>
+                <p>Another project description goes here.</p>
+                <a href="#" class="btn-small">GitHub</a>
+                <a href="#" class="btn-small">Live Demo</a>
+            </div>
 
-<section id="work">
-  <h2>Featured Work</h2>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x250" alt="Project Image">
+                <h3>Project Three</h3>
+                <p>Another cool project you built.</p>
+                <a href="#" class="btn-small">GitHub</a>
+                <a href="#" class="btn-small">Live Demo</a>
+            </div>
 
-  <div class="card">
-    <h3>Master’s Thesis – Autonomous Navigation</h3>
-    <p>University of Stuttgart · 2024</p>
-    <p>
-      Developed an autonomous navigation system for industrial robots using
-      ROS2, SLAM, and multi-sensor fusion with vision-based perception.
-    </p>
-  </div>
+        </div>
+    </section>
 
-  <div class="card">
-    <h3>Autonomous Mobile Robot for Smart Factory</h3>
-    <p>
-      Designed SLAM-based navigation and path planning for a mobile robot
-      operating in indoor industrial environments.
-    </p>
-  </div>
-</section>
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">React</div>
+            <div class="skill">Node.js</div>
+            <div class="skill">Python</div>
+        </div>
+    </section>
 
-<section id="education">
-  <h2>Education</h2>
+    <!-- ABOUT -->
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <div class="about-container">
+            <img src="https://via.placeholder.com/200" alt="Your Photo">
+            <p>
+                Write a short bio about yourself here.  
+                Talk about your background, interests, and what motivates you as a developer.
+            </p>
+        </div>
+    </section>
 
-  <div class="card">
-    <h3>M.Sc. Electrical Engineering</h3>
-    <p>University of Stuttgart, Germany · 2021–2024</p>
-  </div>
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
+        <p>GitHub: <a href="#">github.com/yourusername</a></p>
+        <p>LinkedIn: <a href="#">linkedin.com/in/yourusername</a></p>
+    </section>
 
-  <div class="card">
-    <h3>B.E. Electronics & Communication</h3>
-    <p>VTU, India · 2015–2019</p>
-  </div>
-</section>
+    <footer>
+        <p>© 2025 Your Name. All rights reserved.</p>
+    </footer>
 
-<section id="experience">
-  <h2>Experience</h2>
-
-  <div class="card">
-    <h3>Embedded Systems Engineer</h3>
-    <p>Beckmann Egle · Germany</p>
-    <p>
-      Developed embedded firmware for STM32 and ESP32 platforms and integrated
-      real-time sensor communication systems.
-    </p>
-  </div>
-
-  <div class="card">
-    <h3>Automotive Cybersecurity Consultant</h3>
-    <p>Itemis AG</p>
-    <p>
-      Worked on securing automotive systems under ISO/SAE 21434 and NIS2
-      regulations.
-    </p>
-  </div>
-</section>
-
-<section id="projects">
-  <h2>Projects</h2>
-
-  <div class="card">
-    <h3>SLAM-Based Robot Navigation</h3>
-    <p>ROS2 · LiDAR</p>
-  </div>
-
-  <div class="card">
-    <h3>YOLO-Based Object Detection</h3>
-    <p>Computer Vision · Deep Learning</p>
-  </div>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <p>
-    I am open to opportunities in robotics, autonomous systems, and AI research.
-  </p>
-  <p>📍 Stuttgart, Germany</p>
-  <p>✉️ your-email</p>
-</section>
-
-
+    <script src="script.js"></script>
 </body>
 </html>
