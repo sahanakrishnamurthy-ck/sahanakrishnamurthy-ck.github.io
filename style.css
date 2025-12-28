@@ -111,22 +111,23 @@ body {
     background-color: #22c55e;
 }
 
-/* CONTENT SECTIONS */
-.section {
-    margin-top: 80px;
+/* ABOUT SECTION */
+.about-section {
     max-width: 800px;
+    margin: 120px auto 0 auto; /* centers the section */
+    text-align: center;        /* centers the text */
 }
 
-.section h2 {
-    font-size: 32px;
+.about-section h2 {
+    font-size: 36px;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     color: #111827;
 }
 
-.section p {
+.about-section p {
     font-size: 18px;
-    line-height: 1.7;
+    line-height: 1.8;
     color: #374151;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
 }
