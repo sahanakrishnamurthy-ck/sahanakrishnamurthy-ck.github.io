@@ -116,6 +116,7 @@ body {
     max-width: 800px;
     margin: 120px auto 0 auto; /* centers the section */
     text-align: center;        /* centers the text */
+    position: relative;
 }
 
 .about-section h2 {
@@ -130,4 +131,33 @@ body {
     line-height: 1.8;
     color: #374151;
     margin-bottom: 20px;
+}
+
+
+/* ICON ROW BEHIND ABOUT SECTION */
+.icon-row {
+    position: absolute;
+    top: -40px; /* adjust vertical position */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 40px; /* spacing between icons */
+    z-index: -1; /* behind text */
+    opacity: 0.15; /* subtle */
+}
+
+.icon-row img {
+    width: 40px; /* smaller icons */
+    height: 40px;
+    animation: slowRotate 18s linear infinite; /* slow rotation */
+}
+
+/* Slow rotation animation */
+@keyframes slowRotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
