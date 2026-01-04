@@ -50,7 +50,7 @@ body {
 .hero {
     position: relative;
     height: 100vh;
-    background-image: url('images/IMG_7850.jpg'); /* change name if needed */
+    background-image: url('images/Photo.jpg'); /* change name if needed */
     background-size: cover;
     background-position: center;
     display: flex;
