@@ -73,6 +73,8 @@ body {
     max-width: 700px;
     padding: 20px;
     z-index: 2;
+    margin-top: auto; 
+    margin-bottom: 120px; /* pushes text down */
 }
 
 .hero-content h1 {
