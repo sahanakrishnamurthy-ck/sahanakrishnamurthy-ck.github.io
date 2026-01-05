@@ -147,11 +147,18 @@ body {
 
 /* ========================= EXPERIENCE SECTION (SMALL HORIZONTAL ICONS) ========================= */
 
-.experience-section {
-    max-width: 800px;
-    margin: 120px auto 0 auto;
+#experience {
     text-align: center;
 }
+
+#experience h2 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 48px;
+    color: #111827;
+}
+
 
 /* Horizontal icon row */
 .exp-grid {
@@ -165,8 +172,8 @@ body {
 
 /* Small square cards */
 .exp-card {
-    width: 190px;
-    height: 140px;
+    width: 220px;
+    height: 180px;
     background: #ffffff;
     border-radius: 18px;
     display: flex;
@@ -195,7 +202,7 @@ body {
 /* Centered, small logo icons */
 .exp-tile-img {
     max-width: 65%;
-    max-height: 60px;
+    max-height: 64px;
     object-fit: contain;
     display: block;
     opacity: 0.9;
