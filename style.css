@@ -23,7 +23,6 @@ body {
     width: 100%;
     height: 60px;
     background: rgba(17, 24, 39, 0.7);
-    backdrop-filter: none;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -71,7 +70,6 @@ body {
     padding-bottom: 100px;
 }
 
-/* Global hero overlay */
 .hero-overlay {
     position: absolute;
     inset: 0;
@@ -85,32 +83,25 @@ body {
     z-index: 1;
 }
 
-/* Hero text container (local contrast plate) */
 .hero-content {
     position: relative;
     max-width: 700px;
     padding: 24px 28px;
     z-index: 2;
-
     background: linear-gradient(
         to top,
         rgba(0, 0, 0, 0.55),
         rgba(0, 0, 0, 0.25),
         rgba(0, 0, 0, 0.05)
     );
-
     border-radius: 14px;
 }
 
-/* =========================
-   HERO TYPOGRAPHY
-========================= */
 .hero-content h1 {
     font-size: 42px;
     font-weight: 800;
     margin-bottom: 10px;
     letter-spacing: -0.02em;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
 }
 
 .hero-content h2 {
@@ -121,7 +112,6 @@ body {
 
 .hero-content p {
     font-size: 17px;
-    font-weight: 400;
     line-height: 1.6;
     margin-bottom: 24px;
 }
@@ -130,9 +120,6 @@ body {
     color: #4ade80;
 }
 
-/* =========================
-   HERO BUTTON
-========================= */
 .hero-btn {
     display: inline-block;
     padding: 12px 28px;
@@ -141,12 +128,6 @@ body {
     font-weight: 600;
     border-radius: 6px;
     text-decoration: none;
-    transition: background-color 0.2s ease, transform 0.15s ease;
-}
-
-.hero-btn:hover {
-    background-color: #22c55e;
-    transform: translateY(-1px);
 }
 
 /* =========================
@@ -173,7 +154,7 @@ body {
 }
 
 /* =========================
-   EXPERIENCE SECTION
+   EXPERIENCE SECTION (STATIC CARDS)
 ========================= */
 .experience-section {
     max-width: 1100px;
@@ -189,187 +170,162 @@ body {
     color: #111827;
 }
 
-/* Grid like your screenshot */
 .exp-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
-    align-items: stretch;
 }
 
 @media (max-width: 1024px) {
-    .exp-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .exp-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 640px) {
     .exp-grid { grid-template-columns: 1fr; }
 }
 
-/* Card */
 .exp-card {
     position: relative;
+    min-height: 220px;
     border-radius: 18px;
     overflow: hidden;
-    min-height: 220px;
-    cursor: pointer;
     box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-    transform: translateZ(0);
-    outline: none;
 }
 
-/* Background layer (you can replace these with actual logo images later) */
 .exp-bg {
     position: absolute;
     inset: 0;
     background-size: cover;
     background-position: center;
-    filter: saturate(1.05);
-    z-index: 1;
 }
 
-/* Simple themed backgrounds; replace with images if you want */
-.exp-bg-iatss { background: radial-gradient(circle at 30% 30%, rgba(74,222,128,0.18), rgba(0,0,0,0.8)), linear-gradient(135deg, #111827, #0b1220); }
-.exp-bg-itemis { background: radial-gradient(circle at 70% 30%, rgba(74,222,128,0.16), rgba(0,0,0,0.78)), linear-gradient(135deg, #0f172a, #111827); }
-.exp-bg-bosch { background: radial-gradient(circle at 25% 20%, rgba(74,222,128,0.14), rgba(0,0,0,0.82)), linear-gradient(135deg, #111827, #0a0f1c); }
-.exp-bg-tcs   { background: radial-gradient(circle at 70% 20%, rgba(74,222,128,0.14), rgba(0,0,0,0.82)), linear-gradient(135deg, #111827, #0c1424); }
-
-/* Top logo row */
-.exp-top {
-    position: absolute;
-    top: 16px;
-    left: 16px;
-    right: 16px;
-    display: flex;
-    justify-content: flex-start;
-    z-index: 3;
+.exp-bg-itemis {
+    background: linear-gradient(135deg, #0f172a, #111827);
 }
 
-.exp-logo {
-    padding: 10px 12px;
-    border-radius: 12px;
-    background: rgba(255,255,255,0.10);
-    border: 1px solid rgba(255,255,255,0.14);
-    color: #ffffff;
-    font-weight: 800;
-    letter-spacing: 0.04em;
-    font-size: 14px;
+.exp-bg-bosch {
+    background: linear-gradient(135deg, #111827, #0a0f1c);
 }
 
-/* Center overlay (default state) */
+.exp-bg-tcs {
+    background: linear-gradient(135deg, #111827, #0c1424);
+}
+
 .exp-overlay {
     position: absolute;
     inset: 0;
-    z-index: 3;
-
+    z-index: 2;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     padding: 22px;
+    color: white;
     text-align: center;
-    color: #fff;
-
     background: linear-gradient(
         to top,
         rgba(0,0,0,0.65),
         rgba(0,0,0,0.25),
         rgba(0,0,0,0.05)
     );
-
-    transition: opacity 220ms ease, transform 220ms ease;
 }
 
-.exp-overlay-title {
+.exp-overlay h3 {
     font-size: 20px;
     font-weight: 800;
     margin-bottom: 6px;
 }
 
-.exp-overlay-subtitle {
+.exp-overlay p {
     font-size: 14px;
-    font-weight: 500;
-    opacity: 0.92;
+    opacity: 0.9;
     margin-bottom: 14px;
-    max-width: 90%;
 }
 
 .exp-btn {
-    appearance: none;
-    border: 0;
-    padding: 9px 16px;
+    padding: 9px 18px;
     border-radius: 999px;
-    background: rgba(0,0,0,0.55);
-    color: #fff;
+    background: rgba(0,0,0,0.6);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: white;
     font-weight: 700;
     cursor: pointer;
-    border: 1px solid rgba(255,255,255,0.18);
 }
 
-/* Details panel (hidden until hover/open) */
-.exp-details {
+/* =========================
+   EXPERIENCE MODAL
+========================= */
+.exp-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    z-index: 1000;
+}
+
+.exp-modal.active {
+    display: block;
+}
+
+.exp-modal-backdrop {
     position: absolute;
     inset: 0;
-    z-index: 4;
-
-    padding: 18px 18px 16px 18px;
-    text-align: left;
-    color: #e5e7eb;
-
-    background: rgba(17, 24, 39, 0.92);
-    backdrop-filter: none;
-
-    transform: translateY(10px);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 220ms ease, transform 220ms ease;
+    background: rgba(0,0,0,0.75);
 }
 
-.exp-details-header h3 {
-    font-size: 16px;
+.exp-modal-content {
+    position: relative;
+    max-width: 960px;
+    max-height: 90vh;
+    margin: 5vh auto;
+    background: #f9fafb;
+    border-radius: 18px;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.exp-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#modal-title {
+    font-size: 32px;
     font-weight: 800;
-    color: #ffffff;
     margin-bottom: 6px;
 }
 
-.exp-meta {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    font-size: 12px;
-    opacity: 0.9;
-    margin-bottom: 12px;
+#modal-dates {
+    font-size: 15px;
+    color: #6b7280;
+    margin-bottom: 24px;
 }
 
-.exp-details ul {
-    padding-left: 18px;
+.exp-modal-body {
     display: grid;
-    gap: 8px;
-    font-size: 13px;
-    line-height: 1.4;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 32px;
 }
 
-/* Hover/Focus: show details, hide overlay */
-.exp-card:hover .exp-overlay,
-.exp-card:focus-within .exp-overlay {
-    opacity: 0;
-    transform: translateY(-4px);
+@media (max-width: 768px) {
+    .exp-modal-body {
+        grid-template-columns: 1fr;
+    }
 }
 
-.exp-card:hover .exp-details,
-.exp-card:focus-within .exp-details {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
+.exp-modal-body img {
+    width: 100%;
+    border-radius: 14px;
 }
 
-/* Mobile tap: JS toggles this class */
-.exp-card.is-open .exp-overlay {
-    opacity: 0;
-    transform: translateY(-4px);
-}
-.exp-card.is-open .exp-details {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
+#modal-points {
+    padding-left: 20px;
+    display: grid;
+    gap: 14px;
+    font-size: 16px;
+    line-height: 1.6;
 }

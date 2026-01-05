@@ -5,17 +5,16 @@
     <title>Sahana Krishnamurthy | Robotics Engineer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
- <!-- TOP NAVIGATION BAR -->
+<!-- ================= TOP NAV ================= -->
 <header class="top-nav">
     <div class="nav-left">
         <a href="#hero" class="logo">Sahana</a>
     </div>
-
     <nav class="nav-right">
         <a href="#hero">Home</a>
         <a href="#about">About</a>
@@ -25,172 +24,159 @@
     </nav>
 </header>
 
-   
+<!-- ================= HERO ================= -->
+<section id="hero" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Hi, I am <span class="highlight">Sahana Krishnamurthy</span></h1>
+        <h2>Robotics & Autonomous Systems Engineer</h2>
+        <p>I build intelligent autonomous robots that perceive, learn, and adapt in real-world environments.</p>
+        <a href="resume/Sahana_Krishnamurthy_Robotics_Resume.pdf" class="hero-btn" download>
+            Download My Resume
+        </a>
+    </div>
+</section>
 
-        <!-- HERO SECTION ONLY -->
-        <section id="hero" class="hero">
-            <div class="hero-overlay"></div>
-    
-            <div class="hero-content">
-                <h1>Hi, I am <span class="highlight">Sahana Krishnamurthy</span></h1>
-                <h2>Robotics & Autonomous Systems Engineer</h2>
-                <p>I build intelligent autonomous robots that perceive, learn, and adapt in real‑world environments.</p>
-    
-                <a href="resume/Sahana_Krishnamurthy_Robotics_Resume.pdf" class="hero-btn" download>
-                    Download My Resume
-                </a>
-            </div>
-        </section>
-    
-        <main class="content">
+<main class="content">
 
-            <!-- ABOUT SECTION -->
+<!-- ================= ABOUT ================= -->
 <section id="about" class="section about-section">
-
-    
     <h2>About</h2>
-
     <p>
-        I am a robotics engineer specializing in autonomous systems, simulation development, and intelligent robotic behavior. 
-        My work focuses on bridging the sim‑to‑real gap by building high‑fidelity virtual environments, enabling safer, faster, 
-        and more reliable robotic testing and deployment. I’m particularly passionate about reinforcement learning, imitation 
-        learning, and control strategies that allow robots to interact with the world in more adaptive, human‑like ways.
+        I am a robotics engineer specializing in autonomous systems, simulation development, and intelligent robotic behavior.
+        My work focuses on bridging the sim-to-real gap through high-fidelity virtual environments and AI-driven robotics.
     </p>
-
     <p>
-        I hold a Master’s degree in Electrical Engineering from the University of Stuttgart, where I worked on SLAM, sensor 
-        fusion, and AI‑driven perception for autonomous robots. My experience spans autonomous navigation, computer vision, 
-        embedded systems, and cybersecurity for intelligent machines — including work at Bosch, Itemis AG, and Tata Consultancy 
-        Services.
-    </p>
-
-    <p>
-        When I’m not building or experimenting with robots, you’ll find me hiking, exploring new cuisines, or diving into 
-        creative hobbies that keep me curious and inspired.
+        I hold a Master’s degree in Electrical Engineering from the University of Stuttgart with experience in SLAM,
+        sensor fusion, perception, embedded systems, and cybersecurity.
     </p>
 </section>
 
-    <!-- EXPERIENCE SECTION -->
+<!-- ================= EXPERIENCE ================= -->
 <section id="experience" class="section experience-section">
-  <h2>Experience</h2>
+    <h2>Experience</h2>
 
-  <div class="exp-grid">
-    
-     <!-- 2) Itemis -->
-    <article class="exp-card" tabindex="0">
-      <div class="exp-bg exp-bg-itemis"></div>
+    <div class="exp-grid">
 
-      <div class="exp-top">
-        <div class="exp-logo">itemis</div>
-      </div>
+        <!-- ITEMIS -->
+        <article class="exp-card">
+            <div class="exp-bg exp-bg-itemis"></div>
+            <div class="exp-overlay">
+                <h3>Cybersecurity Consultant</h3>
+                <p>Working Student – itemis AG</p>
+                <button class="exp-btn"
+                    data-title="Working Student – Cybersecurity Consultant"
+                    data-dates="Jun 2023 – May 2024 | itemis AG, Germany"
+                    data-image="images/itemis.jpg"
+                    data-points='[
+                        "Conducted cybersecurity compliance analysis under ISO/SAE 21434 and NIS2",
+                        "Performed Threat Analysis and Risk Assessment (TARA) using itemis SECURE",
+                        "Improved requirements traceability from 65% to 92% using Rational DOORS",
+                        "Executed penetration testing and vulnerability mitigation for automotive systems",
+                        "Supported OEM and Tier-1 audits for cybersecurity and functional safety"
+                    ]'>
+                    Explore
+                </button>
+            </div>
+        </article>
 
-      <div class="exp-overlay">
-        <div class="exp-overlay-title">Cybersecurity Consultant</div>
-        <div class="exp-overlay-subtitle">Working Student – Itemis AG</div>
-        <button class="exp-btn" type="button">Explore</button>
-      </div>
+        <!-- BOSCH -->
+        <article class="exp-card">
+            <div class="exp-bg exp-bg-bosch"></div>
+            <div class="exp-overlay">
+                <h3>Automation Testing Engineer</h3>
+                <p>Working Student – Bosch Engineering</p>
+                <button class="exp-btn"
+                    data-title="Working Student – Automation Testing Engineer"
+                    data-dates="Feb 2022 – Sep 2022 | Bosch Engineering GmbH, Stuttgart"
+                    data-image="images/bosch.jpg"
+                    data-points='[
+                        "Automated 200+ SIL test cases using C++ and Python",
+                        "Developed AUTOSAR-compliant models for ADAS validation",
+                        "Reduced regression testing time by 45%",
+                        "Validated software against ISO 26262 safety standards",
+                        "Collaborated with cross-functional automotive teams"
+                    ]'>
+                    Explore
+                </button>
+            </div>
+        </article>
 
-      <div class="exp-details">
-        <div class="exp-details-header">
-          <h3>Working Student – Cybersecurity Consultant</h3>
-          <div class="exp-meta">
-            <span>Itemis AG, Germany</span>
-            <span>Jun 2023 – May 2024</span>
-          </div>
-        </div>
+        <!-- TCS -->
+        <article class="exp-card">
+            <div class="exp-bg exp-bg-tcs"></div>
+            <div class="exp-overlay">
+                <h3>IT Consultant</h3>
+                <p>Tata Consultancy Services</p>
+                <button class="exp-btn"
+                    data-title="IT Consultant – Assistant System Administrator"
+                    data-dates="Jul 2019 – Aug 2021 | Tata Consultancy Services, India"
+                    data-image="images/tcs.jpg"
+                    data-points='[
+                        "Managed 250+ enterprise middleware servers with 99.9% uptime",
+                        "Automated SSL renewal and disaster recovery using Bash and Python",
+                        "Built CI/CD pipelines in Azure reducing deployment errors by 60%",
+                        "Improved incident response workflows, cutting MTTR by 50%",
+                        "Strengthened enterprise cybersecurity monitoring"
+                    ]'>
+                    Explore
+                </button>
+            </div>
+        </article>
 
-        <ul>
-          <li>Conducted cybersecurity compliance analysis under ISO/SAE 21434, ISO 26262, and NIS2, identifying 30+ vulnerabilities across automotive software modules.</li>
-          <li>Performed TARA using Itemis SECURE; improved traceability from 65% to 92% via Rational DOORS.</li>
-          <li>Executed penetration testing and risk-mitigation strategies, boosting robustness by 40% against automotive cybersecurity threats.</li>
-          <li>Managed requirement engineering documentation for OEM and Tier-1 audits, aligning security and functional safety requirements.</li>
-        </ul>
-      </div>
-    </article>
-
-    <!-- 3) Bosch -->
-    <article class="exp-card" tabindex="0">
-      <div class="exp-bg exp-bg-bosch"></div>
-
-      <div class="exp-top">
-        <div class="exp-logo">BOSCH</div>
-      </div>
-
-      <div class="exp-overlay">
-        <div class="exp-overlay-title">Automation Testing Engineer</div>
-        <div class="exp-overlay-subtitle">Working Student – Bosch Engineering</div>
-        <button class="exp-btn" type="button">Explore</button>
-      </div>
-
-      <div class="exp-details">
-        <div class="exp-details-header">
-          <h3>Working Student – Automation Testing Engineer</h3>
-          <div class="exp-meta">
-            <span>Bosch Engineering GmbH, Stuttgart</span>
-            <span>Feb 2022 – Sep 2022</span>
-          </div>
-        </div>
-
-        <ul>
-          <li>Automated 200+ test cases in C++ and Python using SILVER simulation framework, reducing testing time by 45%.</li>
-          <li>Designed AUTOSAR-compliant models for sensor fusion and autonomous driving validation, reducing hardware dependency and increasing test coverage.</li>
-          <li>Conducted failure analysis and test validation against ISO 26262 safety standards.</li>
-          <li>Collaborated on optimizing test-automation pipelines, improving reliability and maintainability for development teams.</li>
-        </ul>
-      </div>
-    </article>
-
-    <!-- 4) TCS -->
-    <article class="exp-card" tabindex="0">
-      <div class="exp-bg exp-bg-tcs"></div>
-
-      <div class="exp-top">
-        <div class="exp-logo">TCS</div>
-      </div>
-
-      <div class="exp-overlay">
-        <div class="exp-overlay-title">Assistant System Administrator</div>
-        <div class="exp-overlay-subtitle">IT Consultant – Tata Consultancy Services</div>
-        <button class="exp-btn" type="button">Explore</button>
-      </div>
-
-      <div class="exp-details">
-        <div class="exp-details-header">
-          <h3>IT Consultant – Assistant System Administrator</h3>
-          <div class="exp-meta">
-            <span>Tata Consultancy Services, India</span>
-            <span>Jul 2019 – Aug 2021</span>
-          </div>
-        </div>
-
-        <ul>
-          <li>Managed 250+ enterprise middleware servers (WebSphere, WebLogic, JBoss, IIS), maintaining 99.9% uptime for 10,000+ concurrent users.</li>
-          <li>Automated SSL certificate renewal and disaster recovery using Bash/Python, reducing security-related downtime incidents by 55%.</li>
-          <li>Designed CI/CD automation pipelines in Azure, reducing release cycle time by 40% and deployment errors by 60%.</li>
-          <li>Strengthened cybersecurity monitoring and incident response workflows, reducing mean-time-to-resolution by 50%.</li>
-        </ul>
-      </div>
-    </article>
-
-  </div>
+    </div>
 </section>
-    
-<!-- Put this before </body> -->
-<script>
-  // Mobile-friendly: tap "Explore" to toggle details
-  document.querySelectorAll('.exp-card').forEach(card => {
-    const btn = card.querySelector('.exp-btn');
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      card.classList.toggle('is-open');
-    });
 
-    // Also allow tapping the card itself on mobile
-    card.addEventListener('click', () => {
-      card.classList.toggle('is-open');
+</main>
+
+<!-- ================= EXPERIENCE MODAL ================= -->
+<div id="experience-modal" class="exp-modal">
+    <div class="exp-modal-backdrop"></div>
+
+    <div class="exp-modal-content">
+        <button class="exp-modal-close">&times;</button>
+
+        <h2 id="modal-title"></h2>
+        <p id="modal-dates"></p>
+
+        <div class="exp-modal-body">
+            <img id="modal-image" alt="">
+            <ul id="modal-points"></ul>
+        </div>
+    </div>
+</div>
+
+<!-- ================= SCRIPT ================= -->
+<script>
+const modal = document.getElementById("experience-modal");
+
+document.querySelectorAll(".exp-btn").forEach(btn => {
+    btn.addEventListener("click", e => {
+        e.stopPropagation();
+        document.getElementById("modal-title").textContent = btn.dataset.title;
+        document.getElementById("modal-dates").textContent = btn.dataset.dates;
+        document.getElementById("modal-image").src = btn.dataset.image;
+
+        const list = document.getElementById("modal-points");
+        list.innerHTML = "";
+        JSON.parse(btn.dataset.points).forEach(p => {
+            const li = document.createElement("li");
+            li.textContent = p;
+            list.appendChild(li);
+        });
+
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
     });
-  });
+});
+
+document.querySelector(".exp-modal-close").onclick = closeModal;
+document.querySelector(".exp-modal-backdrop").onclick = closeModal;
+
+function closeModal() {
+    modal.classList.remove("active");
+    document.body.style.overflow = "";
+}
 </script>
 
 </body>
