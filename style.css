@@ -173,8 +173,8 @@ body {
 
 /* Small square logo tiles (like your screenshot 2) */
 .exp-card {
-    width: 280px;
-    height: 200px;
+    width: 320px;
+    height: 24px;
     background: #ffffff;
     border-radius: 18px;
     display: flex;
@@ -202,8 +202,8 @@ body {
 
 /* Logo sizing (balanced across brands) */
 .exp-tile-img {
-    max-width: 90%;
-    max-height: 120px;
+    max-width: 100%;
+    max-height: 160px;
     object-fit: contain;
     display: block;
     opacity: 0.9;
