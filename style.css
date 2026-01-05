@@ -143,37 +143,38 @@ body {
     margin-bottom: 20px;
 }
 
+/* ========================= EXPERIENCE SECTION ========================= */
 
-
-/* ========================= EXPERIENCE SECTION (SMALL HORIZONTAL ICONS) ========================= */
-
+/* Make Experience behave like About (centered column) */
 #experience {
+    max-width: 800px;
+    margin: 120px auto 0 auto;
     text-align: center;
 }
 
+/* Experience title (same visual weight as About) */
 #experience h2 {
-    text-align: center;
     font-size: 36px;
     font-weight: 700;
     margin-bottom: 48px;
     color: #111827;
 }
 
-
-/* Horizontal icon row */
-.exp-grid {
+/* Break logos out of the centered column */
+#experience .exp-grid {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 32px;
-    margin-top: 48px;
-    flex-wrap: wrap; /* wraps nicely on smaller screens */
+    flex-wrap: wrap;
 }
 
-/* Small square cards */
+/* Small square logo tiles (like your screenshot 2) */
 .exp-card {
-    width: 220px;
-    height: 180px;
+    width: 180px;
+    height: 140px;
     background: #ffffff;
     border-radius: 18px;
     display: flex;
@@ -188,7 +189,7 @@ body {
     box-shadow: 0 22px 48px rgba(0, 0, 0, 0.14);
 }
 
-/* Make entire card clickable (button reset) */
+/* Make entire tile clickable */
 .exp-btn {
     all: unset;
     width: 100%;
@@ -199,10 +200,10 @@ body {
     cursor: pointer;
 }
 
-/* Centered, small logo icons */
+/* Logo sizing (balanced across brands) */
 .exp-tile-img {
     max-width: 65%;
-    max-height: 64px;
+    max-height: 56px;
     object-fit: contain;
     display: block;
     opacity: 0.9;
@@ -212,17 +213,13 @@ body {
     opacity: 1;
 }
 
-/* Disable any legacy background or overlay styles */
-.exp-bg {
-    display: none;
-}
-
+/* Disable unused legacy styles */
+.exp-bg,
 .exp-overlay {
     display: none;
 }
 
-
-/* ========================= EXPERIENCE MODAL (Centered + Smooth) ========================= */
+/* ========================= EXPERIENCE MODAL (KEEP THIS) ========================= */
 
 .exp-modal {
     position: fixed;
@@ -315,13 +312,12 @@ body {
 
 .exp-modal-body img {
     width: 100%;
-    max-height: 320px;        /* CRITICAL */
-    object-fit: contain;     /* CRITICAL */
+    max-height: 320px;
+    object-fit: contain;
     border-radius: 14px;
     display: block;
     margin: 0 auto;
 }
-
 
 #modal-points {
     padding-left: 20px;
@@ -332,10 +328,4 @@ body {
     color: #111827;
 }
 
-.exp-btn {
-    all: unset;
-    display: block;
-    width: 100%;
-    cursor: pointer;
-}
 
