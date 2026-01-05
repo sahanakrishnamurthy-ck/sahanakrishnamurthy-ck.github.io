@@ -70,7 +70,128 @@
     </p>
 </section>
 
-        
+    <!-- EXPERIENCE SECTION -->
+<section id="experience" class="section experience-section">
+  <h2>Experience</h2>
+
+  <div class="exp-grid">
     
+     <!-- 2) Itemis -->
+    <article class="exp-card" tabindex="0">
+      <div class="exp-bg exp-bg-itemis"></div>
+
+      <div class="exp-top">
+        <div class="exp-logo">itemis</div>
+      </div>
+
+      <div class="exp-overlay">
+        <div class="exp-overlay-title">Cybersecurity Consultant</div>
+        <div class="exp-overlay-subtitle">Working Student – Itemis AG</div>
+        <button class="exp-btn" type="button">Explore</button>
+      </div>
+
+      <div class="exp-details">
+        <div class="exp-details-header">
+          <h3>Working Student – Cybersecurity Consultant</h3>
+          <div class="exp-meta">
+            <span>Itemis AG, Germany</span>
+            <span>Jun 2023 – May 2024</span>
+          </div>
+        </div>
+
+        <ul>
+          <li>Conducted cybersecurity compliance analysis under ISO/SAE 21434, ISO 26262, and NIS2, identifying 30+ vulnerabilities across automotive software modules.</li>
+          <li>Performed TARA using Itemis SECURE; improved traceability from 65% to 92% via Rational DOORS.</li>
+          <li>Executed penetration testing and risk-mitigation strategies, boosting robustness by 40% against automotive cybersecurity threats.</li>
+          <li>Managed requirement engineering documentation for OEM and Tier-1 audits, aligning security and functional safety requirements.</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- 3) Bosch -->
+    <article class="exp-card" tabindex="0">
+      <div class="exp-bg exp-bg-bosch"></div>
+
+      <div class="exp-top">
+        <div class="exp-logo">BOSCH</div>
+      </div>
+
+      <div class="exp-overlay">
+        <div class="exp-overlay-title">Automation Testing Engineer</div>
+        <div class="exp-overlay-subtitle">Working Student – Bosch Engineering</div>
+        <button class="exp-btn" type="button">Explore</button>
+      </div>
+
+      <div class="exp-details">
+        <div class="exp-details-header">
+          <h3>Working Student – Automation Testing Engineer</h3>
+          <div class="exp-meta">
+            <span>Bosch Engineering GmbH, Stuttgart</span>
+            <span>Feb 2022 – Sep 2022</span>
+          </div>
+        </div>
+
+        <ul>
+          <li>Automated 200+ test cases in C++ and Python using SILVER simulation framework, reducing testing time by 45%.</li>
+          <li>Designed AUTOSAR-compliant models for sensor fusion and autonomous driving validation, reducing hardware dependency and increasing test coverage.</li>
+          <li>Conducted failure analysis and test validation against ISO 26262 safety standards.</li>
+          <li>Collaborated on optimizing test-automation pipelines, improving reliability and maintainability for development teams.</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- 4) TCS -->
+    <article class="exp-card" tabindex="0">
+      <div class="exp-bg exp-bg-tcs"></div>
+
+      <div class="exp-top">
+        <div class="exp-logo">TCS</div>
+      </div>
+
+      <div class="exp-overlay">
+        <div class="exp-overlay-title">Assistant System Administrator</div>
+        <div class="exp-overlay-subtitle">IT Consultant – Tata Consultancy Services</div>
+        <button class="exp-btn" type="button">Explore</button>
+      </div>
+
+      <div class="exp-details">
+        <div class="exp-details-header">
+          <h3>IT Consultant – Assistant System Administrator</h3>
+          <div class="exp-meta">
+            <span>Tata Consultancy Services, India</span>
+            <span>Jul 2019 – Aug 2021</span>
+          </div>
+        </div>
+
+        <ul>
+          <li>Managed 250+ enterprise middleware servers (WebSphere, WebLogic, JBoss, IIS), maintaining 99.9% uptime for 10,000+ concurrent users.</li>
+          <li>Automated SSL certificate renewal and disaster recovery using Bash/Python, reducing security-related downtime incidents by 55%.</li>
+          <li>Designed CI/CD automation pipelines in Azure, reducing release cycle time by 40% and deployment errors by 60%.</li>
+          <li>Strengthened cybersecurity monitoring and incident response workflows, reducing mean-time-to-resolution by 50%.</li>
+        </ul>
+      </div>
+    </article>
+
+  </div>
+</section>
+    
+<!-- Put this before </body> -->
+<script>
+  // Mobile-friendly: tap "Explore" to toggle details
+  document.querySelectorAll('.exp-card').forEach(card => {
+    const btn = card.querySelector('.exp-btn');
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      card.classList.toggle('is-open');
+    });
+
+    // Also allow tapping the card itself on mobile
+    card.addEventListener('click', () => {
+      card.classList.toggle('is-open');
+    });
+  });
+</script>
+
 </body>
 </html>
