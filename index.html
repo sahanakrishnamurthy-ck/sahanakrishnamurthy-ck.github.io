@@ -40,7 +40,7 @@
 <main class="content">
 
 <!-- ABOUT SECTION --> 
-
+ 
  <section id="about" class="section about-section"> 
     <h2>About</h2> 
     <p> I am a robotics engineer specializing in autonomous systems, 
@@ -70,7 +70,7 @@
     </section>
 
 <!-- ================= EXPERIENCE ================= -->
-<section id="experience" class="experience-section">
+<section id="experience" class="section experience-section">
     <h2>Experience</h2>
 
     <div class="exp-grid">
@@ -87,10 +87,10 @@
                     data-image="images/itemis.jpg"
                     data-points='[
                         "Conducted cybersecurity compliance analysis under ISO/SAE 21434 and NIS2",
-                        "Performed Threat Analysis and Risk Assessment (TARA)",
-                        "Improved requirements traceability from 65% to 92%",
-                        "Executed penetration testing for automotive systems",
-                        "Supported OEM and Tier-1 cybersecurity audits"
+                        "Performed Threat Analysis and Risk Assessment (TARA) using itemis SECURE",
+                        "Improved requirements traceability from 65% to 92% using Rational DOORS",
+                        "Executed penetration testing and vulnerability mitigation for automotive systems",
+                        "Supported OEM and Tier-1 audits for cybersecurity and functional safety"
                     ]'>
                     Explore
                 </button>
@@ -105,14 +105,14 @@
                 <p>Working Student – Bosch Engineering</p>
                 <button class="exp-btn"
                     data-title="Working Student – Automation Testing Engineer"
-                    data-dates="Feb 2022 – Sep 2022 | Bosch Engineering GmbH"
+                    data-dates="Feb 2022 – Sep 2022 | Bosch Engineering GmbH, Stuttgart"
                     data-image="images/bosch.jpg"
                     data-points='[
                         "Automated 200+ SIL test cases using C++ and Python",
-                        "Developed AUTOSAR-compliant test frameworks",
+                        "Developed AUTOSAR-compliant models for ADAS validation",
                         "Reduced regression testing time by 45%",
-                        "Validated software against ISO 26262",
-                        "Collaborated with cross-functional ADAS teams"
+                        "Validated software against ISO 26262 safety standards",
+                        "Collaborated with cross-functional automotive teams"
                     ]'>
                     Explore
                 </button>
@@ -127,13 +127,13 @@
                 <p>Tata Consultancy Services</p>
                 <button class="exp-btn"
                     data-title="IT Consultant – Assistant System Administrator"
-                    data-dates="Jul 2019 – Aug 2021 | Tata Consultancy Services"
+                    data-dates="Jul 2019 – Aug 2021 | Tata Consultancy Services, India"
                     data-image="images/tcs.jpg"
                     data-points='[
-                        "Managed 250+ enterprise servers with 99.9% uptime",
-                        "Automated SSL renewal and disaster recovery",
-                        "Built CI/CD pipelines in Azure",
-                        "Improved incident response workflows",
+                        "Managed 250+ enterprise middleware servers with 99.9% uptime",
+                        "Automated SSL renewal and disaster recovery using Bash and Python",
+                        "Built CI/CD pipelines in Azure reducing deployment errors by 60%",
+                        "Improved incident response workflows, cutting MTTR by 50%",
                         "Strengthened enterprise cybersecurity monitoring"
                     ]'>
                     Explore
@@ -148,10 +148,14 @@
 
 <!-- ================= EXPERIENCE MODAL ================= -->
 <div id="experience-modal" class="exp-modal">
+    <div class="exp-modal-backdrop"></div>
+
     <div class="exp-modal-content">
         <button class="exp-modal-close">&times;</button>
+
         <h2 id="modal-title"></h2>
         <p id="modal-dates"></p>
+
         <div class="exp-modal-body">
             <img id="modal-image" alt="">
             <ul id="modal-points"></ul>
@@ -164,36 +168,57 @@ const modal = document.getElementById("experience-modal");
 const closeBtn = document.querySelector(".exp-modal-close");
 
 document.querySelectorAll(".exp-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-        document.getElementById("modal-title").textContent = btn.dataset.title;
-        document.getElementById("modal-dates").textContent = btn.dataset.dates;
+  btn.addEventListener("click", e => {
+    e.stopPropagation();
 
-        const img = document.getElementById("modal-image");
-        img.src = btn.dataset.image || "";
-        img.style.display = btn.dataset.image ? "block" : "none";
+    document.getElementById("modal-title").textContent = btn.dataset.title;
+    document.getElementById("modal-dates").textContent = btn.dataset.dates;
 
-        const list = document.getElementById("modal-points");
-        list.innerHTML = "";
-        JSON.parse(btn.dataset.points).forEach(p => {
-            const li = document.createElement("li");
-            li.textContent = p;
-            list.appendChild(li);
-        });
+    const img = document.getElementById("modal-image");
+    img.src = btn.dataset.image || "";
+    img.style.display = btn.dataset.image ? "block" : "none";
 
-        modal.classList.add("active");
-        document.body.style.overflow = "hidden";
+    const list = document.getElementById("modal-points");
+    list.innerHTML = "";
+    JSON.parse(btn.dataset.points).forEach(p => {
+      const li = document.createElement("li");
+      li.textContent = p;
+      list.appendChild(li);
     });
+
+    modal.classList.add("active");
+    document.body.style.overflow = "hidden";
+  });
 });
 
 function closeModal() {
-    modal.classList.remove("active");
-    document.body.style.overflow = "";
+  modal.classList.remove("active");
+  document.body.style.overflow = "";
 }
 
-closeBtn.onclick = closeModal;
-modal.onclick = e => { if (e.target === modal) closeModal(); };
-document.onkeydown = e => { if (e.key === "Escape") closeModal(); };
+closeBtn.addEventListener("click", closeModal);
+modal.addEventListener("click", e => {
+  if (e.target === modal) closeModal();
+});
+
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") closeModal();
+});
 </script>
+
+<div id="experience-modal" class="exp-modal">
+  <div class="exp-modal-content">
+    <button class="exp-modal-close">&times;</button>
+
+    <h2 id="modal-title"></h2>
+    <p id="modal-dates"></p>
+
+    <div class="exp-modal-body">
+      <img id="modal-image" src="" alt="">
+      <ul id="modal-points"></ul>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
