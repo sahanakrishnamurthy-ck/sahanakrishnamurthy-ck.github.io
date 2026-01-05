@@ -154,22 +154,21 @@ body {
 }
 
 /* =========================
-   EXPERIENCE MODAL – SMOOTH POPUP
+   EXPERIENCE MODAL (Centered + Smooth)
 ========================= */
 .exp-modal {
     position: fixed;
     inset: 0;
-    z-index: 2000;
+    z-index: 1000;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: rgba(0,0,0,0.75);
-
+    /* hidden by default */
     opacity: 0;
     pointer-events: none;
-    transition: opacity 260ms ease;
+
+    display: grid;
+    place-items: center;
+
+    transition: opacity 220ms ease;
 }
 
 .exp-modal.active {
@@ -177,22 +176,35 @@ body {
     pointer-events: auto;
 }
 
-/* Modal box */
+/* Backdrop fade */
+.exp-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(2px);
+}
+
+/* Modal card */
 .exp-modal-content {
-    background: #f9fafb;
+    position: relative;
     width: min(1100px, 92vw);
     max-height: 88vh;
+
+    background: #f9fafb;
+    border-radius: 18px;
+
     padding: 40px;
-    border-radius: 20px;
+    overflow: auto;
 
-    overflow-y: auto;
-
-    /* animation */
-    transform: translateY(30px) scale(0.96);
+    /* smooth entrance */
+    transform: translateY(14px) scale(0.98);
     opacity: 0;
-    transition: transform 300ms ease, opacity 300ms ease;
+    transition: transform 260ms ease, opacity 260ms ease;
 
-    box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+    /* sits above backdrop */
+    z-index: 1;
+
+    box-shadow: 0 30px 80px rgba(0,0,0,0.35);
 }
 
 .exp-modal.active .exp-modal-content {
@@ -202,53 +214,67 @@ body {
 
 /* Close button */
 .exp-modal-close {
-    position: absolute;
-    top: 16px;
-    right: 20px;
+    position: sticky;   /* stays visible when scrolling */
+    top: 0;
+    float: right;
+
     font-size: 28px;
-    background: none;
+    background: transparent;
     border: none;
     cursor: pointer;
     color: #111827;
+
+    padding: 4px 8px;
+    margin: -10px -8px 0 0;
 }
 
 /* Header */
 #modal-title {
     font-size: 34px;
     font-weight: 800;
+    margin: 10px 0 6px 0;
+    color: #111827;
     text-align: center;
-    margin-bottom: 6px;
 }
 
 #modal-dates {
     font-size: 15px;
     color: #6b7280;
+    margin-bottom: 26px;
     text-align: center;
-    margin-bottom: 30px;
 }
 
-/* Content */
+/* Body layout */
 .exp-modal-body {
     display: grid;
     grid-template-columns: 1fr 1.25fr;
     gap: 32px;
+    align-items: start;
 }
 
 @media (max-width: 900px) {
+    .exp-modal-content {
+        padding: 24px;
+        max-height: 92vh;
+    }
     .exp-modal-body {
         grid-template-columns: 1fr;
     }
 }
 
+/* Media */
 .exp-modal-body img {
     width: 100%;
     border-radius: 14px;
+    display: block;
 }
 
+/* Bullet text */
 #modal-points {
     padding-left: 20px;
     display: grid;
     gap: 14px;
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.65;
+    color: #111827;
 }
