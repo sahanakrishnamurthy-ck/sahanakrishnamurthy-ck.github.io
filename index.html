@@ -161,38 +161,62 @@
     </div>
 </div>
 
-<!-- ================= SCRIPT ================= -->
 <script>
 const modal = document.getElementById("experience-modal");
+const closeBtn = document.querySelector(".exp-modal-close");
 
 document.querySelectorAll(".exp-btn").forEach(btn => {
-    btn.addEventListener("click", e => {
-        e.stopPropagation();
-        document.getElementById("modal-title").textContent = btn.dataset.title;
-        document.getElementById("modal-dates").textContent = btn.dataset.dates;
-        document.getElementById("modal-image").src = btn.dataset.image;
+  btn.addEventListener("click", e => {
+    e.stopPropagation();
 
-        const list = document.getElementById("modal-points");
-        list.innerHTML = "";
-        JSON.parse(btn.dataset.points).forEach(p => {
-            const li = document.createElement("li");
-            li.textContent = p;
-            list.appendChild(li);
-        });
+    document.getElementById("modal-title").textContent = btn.dataset.title;
+    document.getElementById("modal-dates").textContent = btn.dataset.dates;
 
-        modal.classList.add("active");
-        document.body.style.overflow = "hidden";
+    const img = document.getElementById("modal-image");
+    img.src = btn.dataset.image || "";
+    img.style.display = btn.dataset.image ? "block" : "none";
+
+    const list = document.getElementById("modal-points");
+    list.innerHTML = "";
+    JSON.parse(btn.dataset.points).forEach(p => {
+      const li = document.createElement("li");
+      li.textContent = p;
+      list.appendChild(li);
     });
+
+    modal.classList.add("active");
+    document.body.style.overflow = "hidden";
+  });
 });
 
-document.querySelector(".exp-modal-close").onclick = closeModal;
-document.querySelector(".exp-modal-backdrop").onclick = closeModal;
-
 function closeModal() {
-    modal.classList.remove("active");
-    document.body.style.overflow = "";
+  modal.classList.remove("active");
+  document.body.style.overflow = "";
 }
+
+closeBtn.addEventListener("click", closeModal);
+modal.addEventListener("click", e => {
+  if (e.target === modal) closeModal();
+});
+
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") closeModal();
+});
 </script>
+
+<div id="experience-modal" class="exp-modal">
+  <div class="exp-modal-content">
+    <button class="exp-modal-close">&times;</button>
+
+    <h2 id="modal-title"></h2>
+    <p id="modal-dates"></p>
+
+    <div class="exp-modal-body">
+      <img id="modal-image" src="" alt="">
+      <ul id="modal-points"></ul>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
