@@ -333,31 +333,7 @@ body {
     color: #111827;
 }
 
-/* ================= EXPERIENCE COMPANY GRID ================= */
 
-.company-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  margin-top: 32px;
-}
-
-.company {
-  background: #111827;          /* dark card */
-  color: #e5e7eb;
-  padding: 24px;
-  border-radius: 14px;
-  text-align: center;
-  font-weight: 500;
-  font-size: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.company:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
-}
 
 @media (max-width: 768px) {
     #experience .exp-grid {
