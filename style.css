@@ -329,3 +329,29 @@ body {
 }
 
 
+/* ===== EXPERIENCE SECTION VISUAL BOUNDARY FIX ===== */
+
+#experience {
+    margin-top: 160px;          /* separates from About */
+    padding-top: 80px;          /* creates breathing room */
+    position: relative;
+}
+
+/* Divider line above Experience */
+#experience::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: #e5e7eb;
+    border-radius: 2px;
+}
+
+/* Experience title clarity */
+#experience h2 {
+    margin-top: 0;
+    margin-bottom: 56px;
+}
