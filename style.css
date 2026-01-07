@@ -162,17 +162,16 @@ body {
   z-index: 2;
 }
 
-/* Break logos out of the centered column */
 #experience .exp-grid {
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* ✅ 2 per row */
     gap: 36px;
-    flex-wrap: wrap;
-    padding: 0 24px;
 }
+
 
 /* Tiles */
 .exp-card {
@@ -361,9 +360,10 @@ body {
 }
 
 @media (max-width: 768px) {
-  .company-grid {
-    grid-template-columns: 1fr;
-  }
+    #experience .exp-grid {
+        grid-template-columns: 1fr; /* 1 per row on mobile */
+    }
 }
+
 
 
