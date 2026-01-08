@@ -159,6 +159,88 @@
 
 </main>
 
+
+<!-- ================= PROJECTS ================= -->
+  <section id="projects" class="section projects-section">
+    <h2>Projects</h2>
+
+    <!-- Toggle: PhD vs Industry -->
+    <div class="projects-toggle" role="group" aria-label="Project view toggle">
+      <button class="toggle-btn active" data-view="phd" type="button">PhD view</button>
+      <button class="toggle-btn" data-view="industry" type="button">Industry view</button>
+    </div>
+
+    <div class="projects-wrapper">
+
+      <!-- 1) Master's Thesis -->
+      <article class="project-card" style="background-image: url('images/masters_thesis.jpg');">
+        <div class="project-overlay">
+          <h3>Master’s Thesis</h3>
+          <h4>Autonomous Navigation & Perception for Mobile Robots</h4>
+
+          <p class="project-desc"
+             data-phd="Formulated and evaluated an autonomous navigation pipeline combining SLAM, sensor fusion, and AI-based perception. Emphasis on experimental validation, robustness analysis in dynamic scenes, and reproducible evaluation methodology."
+             data-industry="Built an end-to-end autonomy stack integrating SLAM, sensor fusion, and perception into a reliable navigation pipeline. Focus on engineering integration, runtime stability, and measurable performance in real deployment conditions.">
+          </p>
+
+          <div class="project-actions">
+            <a class="project-btn" href="projects/thesis/Thesis.pdf" target="_blank" rel="noopener">Thesis PDF</a>
+            <a class="project-btn secondary" href="projects/thesis/DemoVideo" target="_blank" rel="noopener">Demo Video</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2) Flagship Robotics / Research Project -->
+      <article class="project-card" style="background-image: url('images/robotics_project.jpg');">
+        <div class="project-overlay">
+          <h3>Flagship Robotics Project</h3>
+          <h4>Autonomous System: Perception → Planning → Control</h4>
+
+          <p class="project-desc"
+             data-phd="Developed a modular autonomy system suitable for research iteration: perception, state estimation, planning, and control. Emphasis on ablation-ready architecture, evaluation hooks, and systematic testing for robustness."
+             data-industry="Engineered a modular autonomy system with clean interfaces and dependable runtime behavior. Emphasis on integration, debugging tooling, performance constraints, and maintainable components suitable for production workflows.">
+          </p>
+
+          <div class="project-actions">
+            <a class="project-btn" href="https://github.com/YOUR_GITHUB_REPO" target="_blank" rel="noopener">GitHub</a>
+            <a class="project-btn secondary" href="projects/robotics/DemoVideo" target="_blank" rel="noopener">Demo Video</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3) Selected Projects (PDF) -->
+      <article class="project-card" style="background-image: url('images/portfolio_pdf_bg.jpg');">
+        <div class="project-overlay">
+          <h3>Selected Projects</h3>
+          <h4>Additional work (coursework, internships, hackathons)</h4>
+
+          <p class="project-desc"
+             data-phd="A curated portfolio of additional technical work, including embedded systems, simulation-based robotics, validation tooling, and applied experimentation. Included to provide breadth beyond the primary research contributions."
+             data-industry="A curated portfolio of additional engineering work, including embedded development, automation tooling, and applied system implementation. Included to provide breadth across software, robotics, and infrastructure.">
+          </p>
+
+          <div class="project-actions">
+            <a class="project-btn" href="projects/Project_Portfolio.pdf" target="_blank" rel="noopener">View Project Portfolio (PDF)</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+ <!-- ================= CONTACT ================= -->
+
+  <section id="contact" class="section contact-section">
+    <h2>Contact</h2>
+    <p class="contact-text">For collaborations, research, or roles in autonomous systems and robotics, feel free to reach out.</p>
+    <div class="contact-actions">
+      <a class="contact-btn" href="mailto:YOUR_EMAIL_HERE">Email</a>
+      <a class="contact-btn secondary" href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </section>
+
+</main>
+
 <!-- ================= EXPERIENCE MODAL ================= -->
 <div id="experience-modal" class="exp-modal">
     <div class="exp-modal-backdrop"></div>
@@ -222,6 +304,28 @@ modal.addEventListener("click", e => {
 document.addEventListener("keydown", e => {
     if (e.key === "Escape") closeModal();
 });
+
+
+// Projects toggle: PhD vs Industry
+  const toggleButtons = document.querySelectorAll(".toggle-btn");
+  const projectDescs = document.querySelectorAll(".project-desc");
+
+  function setProjectsView(view) {
+    projectDescs.forEach(p => {
+      const text = p.getAttribute(view === "industry" ? "data-industry" : "data-phd");
+      p.textContent = text || "";
+    });
+
+    toggleButtons.forEach(b => b.classList.toggle("active", b.dataset.view === view));
+  }
+
+  toggleButtons.forEach(btn => {
+    btn.addEventListener("click", () => setProjectsView(btn.dataset.view));
+  });
+
+  // default
+  setProjectsView("phd");
+
 </script>
 
 </body>
