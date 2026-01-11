@@ -157,8 +157,68 @@
     </div>
 </section>
 
-</main>
 
+<!-- ================= INTERNSHIPS ================= -->
+<section id="internships" class="section internships-section">
+    <h2>Internships</h2>
+
+    <div class="intern-grid">
+
+        <!-- Hindustan Aeronautics Limited -->
+        <article class="intern-card">
+            <div class="intern-bg intern-bg-hal"></div>
+
+            <div class="intern-overlay">
+                <h3>Intern – Avionics & Communication Systems</h3>
+                <p>Hindustan Aeronautics Limited (HAL)</p>
+
+                <button
+                    class="intern-btn"
+                    data-title="Intern – Avionics & Communication Systems"
+                    data-dates="Feb 2019 – Mar 2019 | Hindustan Aeronautics Limited, Bengaluru (India)"
+                    data-image="images/hal.jpg"
+                    data-points='[
+                        "Completed an internship focused on avionics and communication systems in the Mirage 2000 fighter jet.",
+                        "Gained exposure to airborne RADAR technologies, satellite communication, and mission-critical avionics used in defense-grade systems.",
+                        "Explored RADAR’s role in target tracking and navigation, and secure satellite links for real-time aircraft–ground communication.",
+                        "This experience strengthened interest in embedded communications and aerospace systems."
+                    ]'
+                >
+                    Explore
+                </button>
+            </div>
+        </article>
+
+        <!-- PES Center for Intelligent System -->
+        <article class="intern-card">
+            <div class="intern-bg intern-bg-pes"></div>
+
+            <div class="intern-overlay">
+                <h3>Research Intern</h3>
+                <p>PES Center for Intelligent System</p>
+
+                <button
+                    class="intern-btn"
+                    data-title="Research Intern – Millimeter-wave & IoT Networking"
+                    data-dates="Jul 2018 – Aug 2018 | PESAT Center for Intelligent Systems, Bengaluru (India)"
+                    data-image="images/pes.jpg"
+                    data-points='[
+                        "Internship at PESAT Center for Intelligent Systems under Dr. Sanjeev Gurugopinath, focused on millimeter-wave technology applications in 5G networks.",
+                        "Worked on analyzing and optimizing LoRaWAN protocols for efficient IoT connectivity in next-generation wireless systems.",
+                        "Gained hands-on experience in network simulation, protocol evaluation, and high-frequency signal propagation challenges.",
+                        "Built a foundation in emerging communication technologies and practical applications."
+                    ]'
+                >
+                    Explore
+                </button>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+
+</main>
 
 
 <!-- ================= EXPERIENCE MODAL ================= -->
@@ -183,33 +243,43 @@
 const modal = document.getElementById("experience-modal");
 const closeBtn = document.querySelector(".exp-modal-close");
 
+/* ================= EXPERIENCE BUTTONS ================= */
 document.querySelectorAll(".exp-btn").forEach(btn => {
     btn.addEventListener("click", () => {
-
-        document.getElementById("modal-title").textContent =
-            btn.dataset.title;
-
-        document.getElementById("modal-dates").textContent =
-            btn.dataset.dates;
-
-        const img = document.getElementById("modal-image");
-        img.src = btn.dataset.image || "";
-        img.style.display = btn.dataset.image ? "block" : "none";
-
-        const list = document.getElementById("modal-points");
-        list.innerHTML = "";
-
-        JSON.parse(btn.dataset.points).forEach(point => {
-            const li = document.createElement("li");
-            li.textContent = point;
-            list.appendChild(li);
-        });
-
-        modal.classList.add("active");
-        document.body.style.overflow = "hidden";
+        openModal(btn);
     });
 });
 
+/* ================= INTERNSHIP BUTTONS ================= */
+document.querySelectorAll(".intern-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        openModal(btn);
+    });
+});
+
+/* ================= MODAL HANDLER ================= */
+function openModal(btn) {
+    document.getElementById("modal-title").textContent = btn.dataset.title;
+    document.getElementById("modal-dates").textContent = btn.dataset.dates;
+
+    const img = document.getElementById("modal-image");
+    img.src = btn.dataset.image || "";
+    img.style.display = btn.dataset.image ? "block" : "none";
+
+    const list = document.getElementById("modal-points");
+    list.innerHTML = "";
+
+    JSON.parse(btn.dataset.points).forEach(point => {
+        const li = document.createElement("li");
+        li.textContent = point;
+        list.appendChild(li);
+    });
+
+    modal.classList.add("active");
+    document.body.style.overflow = "hidden";
+}
+
+/* ================= CLOSE MODAL ================= */
 function closeModal() {
     modal.classList.remove("active");
     document.body.style.overflow = "";
@@ -224,9 +294,8 @@ modal.addEventListener("click", e => {
 document.addEventListener("keydown", e => {
     if (e.key === "Escape") closeModal();
 });
-
-
 </script>
+
 
 </body>
 </html>
