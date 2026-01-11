@@ -217,6 +217,100 @@
     </div>
 </section>
 
+<!-- ================= PROJECTS ================= -->
+<section id="projects" class="section projects-section">
+    <h2>Projects</h2>
+
+    <div class="projects-slider">
+
+        <!-- LEFT ARROW -->
+        <button class="proj-arrow left" aria-label="Previous project">&#10094;</button>
+
+        <!-- PROJECT SLIDE -->
+        <div class="project-slide active"
+            data-title="Autonomous Mobile Robot with SLAM & Perception"
+            data-dates="Master’s Thesis · University of Stuttgart"
+            data-image="images/thesis.jpg"
+            data-points='[
+                "Designed and implemented a complete autonomous navigation pipeline using ROS and ROS2",
+                "Integrated LiDAR, RGB-D camera, and wheel odometry for real-time SLAM",
+                "Implemented RTAB-Map based visual SLAM and optimized map consistency",
+                "Developed YOLO-based perception for object awareness",
+                "Enabled full autonomous navigation including mapping, localization, and planning",
+                "Validated the system in simulation and real-world experiments"
+            ]'>
+
+            <img src="images/thesis.jpg" alt="Master Thesis Project">
+
+            <div class="project-overlay">
+                <h3>Autonomous Mobile Robot with SLAM & Perception</h3>
+                <p>Master’s Thesis · University of Stuttgart</p>
+                <p class="project-desc">
+                    Full-stack autonomous navigation system integrating SLAM, perception,
+                    and motion planning for real-world robotic deployment.
+                </p>
+                <button class="proj-btn">Read More</button>
+            </div>
+        </div>
+
+        <!-- PROJECT SLIDE -->
+        <div class="project-slide"
+            data-title="Failure Mode Identification in Robotic Systems"
+            data-dates="Research Project · University of Stuttgart"
+            data-image="images/research.jpg"
+            data-points='[
+                "Analyzed failure modes in robotic manipulation tasks",
+                "Worked with a Franka Emika Panda robot",
+                "Investigated LLM-based reasoning for fault explanation",
+                "Designed structured representations for failure diagnostics",
+                "Improved recovery strategies using AI-assisted reasoning"
+            ]'>
+
+            <img src="images/research.jpg" alt="Research Project">
+
+            <div class="project-overlay">
+                <h3>Failure Mode Identification in Robotic Systems</h3>
+                <p>Research Project · University of Stuttgart</p>
+                <p class="project-desc">
+                    Research-driven investigation into explainable AI methods
+                    for diagnosing and recovering robotic failures.
+                </p>
+                <button class="proj-btn">Read More</button>
+            </div>
+        </div>
+
+        <!-- PROJECT SLIDE -->
+        <div class="project-slide"
+            data-title="Digital Twin for Robotic Condition Monitoring"
+            data-dates="Systems Project · ROS2 & Gazebo"
+            data-image="images/digital-twin.jpg"
+            data-points='[
+                "Developed a digital twin using ROS2 and Gazebo",
+                "Synchronized simulation and real robot data",
+                "Implemented anomaly detection for system health monitoring",
+                "Analyzed performance degradation and fault patterns",
+                "Demonstrated predictive maintenance capabilities"
+            ]'>
+
+            <img src="images/digital-twin.jpg" alt="Digital Twin Project">
+
+            <div class="project-overlay">
+                <h3>Digital Twin for Robotic Condition Monitoring</h3>
+                <p>ROS2 · Gazebo · Python</p>
+                <p class="project-desc">
+                    Digital twin–based monitoring system for predictive maintenance
+                    and robotic system diagnostics.
+                </p>
+                <button class="proj-btn">Read More</button>
+            </div>
+        </div>
+
+        <!-- RIGHT ARROW -->
+        <button class="proj-arrow right" aria-label="Next project">&#10095;</button>
+
+    </div>
+</section>
+
 
 </main>
 
@@ -293,6 +387,51 @@ modal.addEventListener("click", e => {
 
 document.addEventListener("keydown", e => {
     if (e.key === "Escape") closeModal();
+});
+</script>
+
+<script>
+const slides = document.querySelectorAll(".project-slide");
+let currentSlide = 0;
+
+function showSlide(index) {
+    slides.forEach(s => s.classList.remove("active"));
+    slides[index].classList.add("active");
+}
+
+document.querySelector(".proj-arrow.right").onclick = () => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+};
+
+document.querySelector(".proj-arrow.left").onclick = () => {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+};
+
+/* Reuse EXPERIENCE MODAL for projects */
+document.querySelectorAll(".proj-btn").forEach(btn => {
+    btn.addEventListener("click", e => {
+        const slide = btn.closest(".project-slide");
+
+        document.getElementById("modal-title").textContent = slide.dataset.title;
+        document.getElementById("modal-dates").textContent = slide.dataset.dates;
+
+        const img = document.getElementById("modal-image");
+        img.src = slide.dataset.image;
+        img.style.display = "block";
+
+        const list = document.getElementById("modal-points");
+        list.innerHTML = "";
+        JSON.parse(slide.dataset.points).forEach(p => {
+            const li = document.createElement("li");
+            li.textContent = p;
+            list.appendChild(li);
+        });
+
+        document.getElementById("experience-modal").classList.add("active");
+        document.body.style.overflow = "hidden";
+    });
 });
 </script>
 
