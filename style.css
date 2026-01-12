@@ -11,12 +11,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* =========================
-   GLOBAL SECTION SPACING
-========================= */
-.section {
-    margin-top: 120px;
-}
+
 
 /* ========================= TOP NAVIGATION BAR ========================= */
 .top-nav {
