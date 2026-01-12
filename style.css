@@ -579,8 +579,15 @@ body {
   height: 56px;
   margin-bottom: 20px;
   filter: grayscale(100%);
-  opacity: 0.85;
+  opacity: 0.75;
+  transition: filter 0.3s ease, opacity 0.3s ease;
 }
+
+.edu-tile:hover .edu-logo {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
 
 .edu-title {
   font-size: 20px;
