@@ -551,6 +551,13 @@ body {
 
 /* ================= EDUCATION TILES ================= */
 
+.section-title-center{
+  text-align: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .education-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
