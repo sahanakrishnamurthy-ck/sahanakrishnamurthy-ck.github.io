@@ -350,43 +350,31 @@
   <h2 class="section-title">Education</h2>
 
   <div class="education-grid">
-    <!-- Card 1 -->
-    <article class="edu-card">
-      <div class="edu-card-inner">
-        <div class="edu-logo">
-          <img src="images/uni.png" alt="Universität Stuttgart">
-        </div>
 
-        <h3 class="edu-university">Universität Stuttgart</h3>
-        <p class="edu-degree">M.Sc. Electrical Engineering</p>
-        <p class="edu-duration">Oct 2021 – Nov 2024 · Germany</p>
-
-        <button class="edu-btn" type="button" onclick="openEduModal('stuttgart')">
+    <!-- Universität Stuttgart -->
+    <article class="edu-tile">
+      <div class="edu-tile-inner">
+        <img src="images/uni.png" alt="Universität Stuttgart" class="edu-logo">
+        <h3 class="edu-title">Universität Stuttgart</h3>
+        <button class="edu-explore" onclick="openEduModal('stuttgart')">
           Explore
         </button>
       </div>
     </article>
 
-    <!-- Card 2 -->
-    <article class="edu-card">
-      <div class="edu-card-inner">
-        <div class="edu-logo">
-          <img src="images/vtu.png" alt="VTU">
-        </div>
-
-        <h3 class="edu-university">Visvesvaraya Technological University</h3>
-        <p class="edu-degree">B.E. Electronics & Communication</p>
-        <p class="edu-duration">Jul 2015 – Jun 2019 · India</p>
-
-        <button class="edu-btn" type="button" onclick="openEduModal('vtu')">
+    <!-- VTU -->
+    <article class="edu-tile">
+      <div class="edu-tile-inner">
+        <img src="images/vtu.png" alt="VTU" class="edu-logo">
+        <h3 class="edu-title">Visvesvaraya Technological University</h3>
+        <button class="edu-explore" onclick="openEduModal('vtu')">
           Explore
         </button>
       </div>
     </article>
+
   </div>
 </section>
-
-
 
 </main>
 
@@ -511,9 +499,9 @@ document.querySelectorAll(".proj-btn").forEach(btn => {
 });
 </script>
 
-<div id="edu-modal" class="edu-modal" aria-hidden="true">
-  <div class="edu-modal-panel" role="dialog" aria-modal="true" aria-label="Education details">
-    <button class="edu-close" type="button" onclick="closeEduModal()">×</button>
+<div id="edu-modal" class="edu-modal">
+  <div class="edu-modal-panel">
+    <button class="edu-close" onclick="closeEduModal()">×</button>
     <div id="edu-modal-body"></div>
   </div>
 </div>
@@ -529,7 +517,6 @@ const educationData = {
     coursework: [
       "Robotics",
       "Algorithms & Data Structures",
-      "Software Engineering",
       "Artificial Intelligence",
       "Machine Learning",
       "Deep Learning",
@@ -539,73 +526,61 @@ const educationData = {
       "Smart Systems"
     ]
   },
+
   vtu: {
     university: "Visvesvaraya Technological University",
     degree: "B.E. Electronics & Communication",
     duration: "Jul 2015 – Jun 2019",
     location: "India",
-    grade: "", // leave empty if you don't want to show
+    grade: null,
     coursework: [
       "Embedded Systems",
-      "Computer Engineering Fundamentals",
-      "Signal Processing",
+      "Digital Signal Processing",
+      "Computer Engineering",
       "Verilog",
-      "Mathematics"
+      "Signals & Systems",
+      "Engineering Mathematics"
     ]
   }
 };
 
-function renderEduModal(data) {
-  const gradeBlock = data.grade
-    ? `<div class="edu-grade">Grade: <strong>${data.grade}</strong></div>`
-    : "";
+function openEduModal(key) {
+  const d = educationData[key];
+  if (!d) return;
 
-  const tags = data.coursework.map(c => `<span class="edu-tag">${c}</span>`).join("");
+  const tags = d.coursework
+    .map(c => `<span class="edu-chip">${c}</span>`)
+    .join("");
 
-  return `
-    <div class="edu-modal-header">
-      <h3 class="edu-modal-title">${data.university}</h3>
-      <p class="edu-modal-sub">${data.degree}</p>
-      <p class="edu-modal-meta">${data.duration} · ${data.location}</p>
-      ${gradeBlock}
-    </div>
+  document.getElementById("edu-modal-body").innerHTML = `
+    <h3 class="edu-modal-title">${d.university}</h3>
+    <p class="edu-modal-degree">${d.degree}</p>
+    <p class="edu-modal-meta">${d.duration} · ${d.location}</p>
+
+    ${d.grade ? `<div class="edu-grade">Grade: <strong>${d.grade}</strong></div>` : ""}
 
     <div class="edu-modal-section">
       <h4>Selected Coursework</h4>
-      <div class="edu-tags">${tags}</div>
+      <div class="edu-chips">${tags}</div>
     </div>
   `;
-}
 
-function openEduModal(key) {
-  const data = educationData[key];
-  if (!data) return;
-
-  document.getElementById("edu-modal-body").innerHTML = renderEduModal(data);
-
-  const modal = document.getElementById("edu-modal");
-  modal.classList.add("active");
-  modal.setAttribute("aria-hidden", "false");
+  document.getElementById("edu-modal").classList.add("active");
   document.body.style.overflow = "hidden";
 }
 
 function closeEduModal() {
-  const modal = document.getElementById("edu-modal");
-  modal.classList.remove("active");
-  modal.setAttribute("aria-hidden", "true");
+  document.getElementById("edu-modal").classList.remove("active");
   document.body.style.overflow = "";
 }
 
-/* Close when clicking outside the panel */
-document.addEventListener("click", (e) => {
-  const modal = document.getElementById("edu-modal");
-  if (!modal.classList.contains("active")) return;
-
-  if (e.target === modal) closeEduModal();
+/* Close on backdrop click */
+document.getElementById("edu-modal").addEventListener("click", e => {
+  if (e.target.id === "edu-modal") closeEduModal();
 });
 
 /* Close on ESC */
-document.addEventListener("keydown", (e) => {
+document.addEventListener("keydown", e => {
   if (e.key === "Escape") closeEduModal();
 });
 </script>
