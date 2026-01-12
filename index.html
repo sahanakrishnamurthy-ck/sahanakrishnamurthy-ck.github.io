@@ -346,47 +346,43 @@
     </div>
 </section>
 
-<section id="education" class="section">
+<section id="education" class="section education-section">
   <h2 class="section-title">Education</h2>
 
   <div class="education-grid">
-
-    <!-- Education Card 1 -->
-    <div class="edu-card">
+    <!-- Card 1 -->
+    <article class="edu-card">
       <div class="edu-card-inner">
         <div class="edu-logo">
-          <img src="images/uni.png" alt="University of Stuttgart">
+          <img src="images/uni.png" alt="Universität Stuttgart">
         </div>
 
         <h3 class="edu-university">Universität Stuttgart</h3>
         <p class="edu-degree">M.Sc. Electrical Engineering</p>
         <p class="edu-duration">Oct 2021 – Nov 2024 · Germany</p>
 
-        <button class="edu-btn"
-          onclick="openEduModal('stuttgart')">
+        <button class="edu-btn" type="button" onclick="openEduModal('stuttgart')">
           Explore
         </button>
       </div>
-    </div>
+    </article>
 
-    <!-- Education Card 2 -->
-    <div class="edu-card">
+    <!-- Card 2 -->
+    <article class="edu-card">
       <div class="edu-card-inner">
         <div class="edu-logo">
           <img src="images/vtu.png" alt="VTU">
         </div>
 
-        <h3 class="edu-university">VTU</h3>
+        <h3 class="edu-university">Visvesvaraya Technological University</h3>
         <p class="edu-degree">B.E. Electronics & Communication</p>
         <p class="edu-duration">Jul 2015 – Jun 2019 · India</p>
 
-        <button class="edu-btn"
-          onclick="openEduModal('vtu')">
+        <button class="edu-btn" type="button" onclick="openEduModal('vtu')">
           Explore
         </button>
       </div>
-    </div>
-
+    </article>
   </div>
 </section>
 
@@ -411,15 +407,6 @@
         </div>
     </div>
 </div>
-
-<div id="edu-modal" class="edu-modal">
-  <div class="edu-modal-content">
-    <span class="edu-close" onclick="closeEduModal()">&times;</span>
-
-    <div id="edu-modal-body"></div>
-  </div>
-</div>
-
 
 <!-- ================= SCRIPT ================= -->
 <script>
@@ -524,56 +511,103 @@ document.querySelectorAll(".proj-btn").forEach(btn => {
 });
 </script>
 
+<div id="edu-modal" class="edu-modal" aria-hidden="true">
+  <div class="edu-modal-panel" role="dialog" aria-modal="true" aria-label="Education details">
+    <button class="edu-close" type="button" onclick="closeEduModal()">×</button>
+    <div id="edu-modal-body"></div>
+  </div>
+</div>
+
 <script>
 const educationData = {
-  stuttgart: `
-    <h3>Universität Stuttgart</h3>
-    <p><strong>Degree:</strong> M.Sc. Electrical Engineering</p>
-    <p><strong>Duration:</strong> Oct 2021 – Nov 2024</p>
-    <p><strong>Grade:</strong> 1.7 / 5.0</p>
-
-    <h4>Master’s Thesis</h4>
-    <p>
-      <strong>SLAM-Based Autonomous Navigation for Mobile Robots</strong><br>
-      ROS2, Gazebo, Multi-Sensor Fusion, YOLOv8, MQTT
-    </p>
-
-    <h4>Selected Coursework</h4>
-    <ul>
-      <li>Robotics & Autonomous Systems</li>
-      <li>Algorithms & Data Structures</li>
-      <li>Artificial Intelligence & Machine Learning</li>
-      <li>Deep Learning</li>
-      <li>Control Systems</li>
-      <li>Embedded Systems</li>
-      <li>Pattern Recognition</li>
-    </ul>
-  `,
-
-  vtu: `
-    <h3>Visvesvaraya Technological University</h3>
-    <p><strong>Degree:</strong> B.E. Electronics & Communication</p>
-    <p><strong>Duration:</strong> Jul 2015 – Jun 2019</p>
-
-    <h4>Core Coursework</h4>
-    <ul>
-      <li>Embedded Systems</li>
-      <li>Digital Signal Processing</li>
-      <li>Computer Engineering Fundamentals</li>
-      <li>Verilog & Digital Design</li>
-      <li>Engineering Mathematics</li>
-    </ul>
-  `
+  stuttgart: {
+    university: "Universität Stuttgart",
+    degree: "M.Sc. Electrical Engineering",
+    duration: "Oct 2021 – Nov 2024",
+    location: "Germany",
+    grade: "1.7 / 5.0",
+    coursework: [
+      "Robotics",
+      "Algorithms & Data Structures",
+      "Software Engineering",
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Deep Learning",
+      "Control Systems",
+      "Embedded Systems",
+      "Pattern Recognition",
+      "Smart Systems"
+    ]
+  },
+  vtu: {
+    university: "Visvesvaraya Technological University",
+    degree: "B.E. Electronics & Communication",
+    duration: "Jul 2015 – Jun 2019",
+    location: "India",
+    grade: "", // leave empty if you don't want to show
+    coursework: [
+      "Embedded Systems",
+      "Computer Engineering Fundamentals",
+      "Signal Processing",
+      "Verilog",
+      "Mathematics"
+    ]
+  }
 };
 
+function renderEduModal(data) {
+  const gradeBlock = data.grade
+    ? `<div class="edu-grade">Grade: <strong>${data.grade}</strong></div>`
+    : "";
+
+  const tags = data.coursework.map(c => `<span class="edu-tag">${c}</span>`).join("");
+
+  return `
+    <div class="edu-modal-header">
+      <h3 class="edu-modal-title">${data.university}</h3>
+      <p class="edu-modal-sub">${data.degree}</p>
+      <p class="edu-modal-meta">${data.duration} · ${data.location}</p>
+      ${gradeBlock}
+    </div>
+
+    <div class="edu-modal-section">
+      <h4>Selected Coursework</h4>
+      <div class="edu-tags">${tags}</div>
+    </div>
+  `;
+}
+
 function openEduModal(key) {
-  document.getElementById("edu-modal-body").innerHTML = educationData[key];
-  document.getElementById("edu-modal").classList.add("active");
+  const data = educationData[key];
+  if (!data) return;
+
+  document.getElementById("edu-modal-body").innerHTML = renderEduModal(data);
+
+  const modal = document.getElementById("edu-modal");
+  modal.classList.add("active");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
 }
 
 function closeEduModal() {
-  document.getElementById("edu-modal").classList.remove("active");
+  const modal = document.getElementById("edu-modal");
+  modal.classList.remove("active");
+  modal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
 }
+
+/* Close when clicking outside the panel */
+document.addEventListener("click", (e) => {
+  const modal = document.getElementById("edu-modal");
+  if (!modal.classList.contains("active")) return;
+
+  if (e.target === modal) closeEduModal();
+});
+
+/* Close on ESC */
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeEduModal();
+});
 </script>
 
 
