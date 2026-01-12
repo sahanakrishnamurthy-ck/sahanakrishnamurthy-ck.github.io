@@ -558,147 +558,146 @@ body {
   margin-right: auto;
 }
 
-.education-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-  gap: 40px;
-  margin-top: 36px;
+/* =====================================================
+   EDUCATION SECTION — TILE STYLE (REFERENCE MATCH)
+   ===================================================== */
+
+/* Section spacing */
+.education-section {
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
+/* Center the "Education" heading */
+.section-title-center {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+/* Grid layout for tiles */
+.education-tiles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(420px, 1fr));
+  gap: 40px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* Responsive: stack on smaller screens */
+@media (max-width: 900px) {
+  .education-tiles {
+    grid-template-columns: minmax(300px, 1fr);
+  }
+}
+
+/* ================= TILE ================= */
+
 .edu-tile {
+  position: relative;
   background: #ffffff;
-  border-radius: 22px;
-  box-shadow: 0 14px 40px rgba(0,0,0,0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border-radius: 24px;
+  min-height: 280px;
+  overflow: hidden;
+
+  box-shadow:
+    0 12px 36px rgba(0, 0, 0, 0.08);
+
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease;
 }
 
 .edu-tile:hover {
   transform: translateY(-6px);
-  box-shadow: 0 22px 60px rgba(0,0,0,0.12);
+  box-shadow:
+    0 22px 64px rgba(0, 0, 0, 0.12);
 }
 
-.edu-tile-inner {
-  padding: 48px 40px;
+/* Subtle background treatment (premium feel) */
+.edu-tile-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      1000px 360px at 50% -20%,
+      rgba(17, 24, 39, 0.06),
+      transparent 60%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(17, 24, 39, 0.03),
+      rgba(17, 24, 39, 0.00)
+    );
+  pointer-events: none;
+}
+
+/* Content container */
+.edu-tile-content {
+  position: relative;
+  height: 100%;
+  padding: 44px 40px 36px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
   text-align: center;
 }
 
-.edu-logo {
-  height: 56px;
-  margin-bottom: 20px;
-  filter: grayscale(100%);
-  opacity: 0.75;
-  transition: filter 0.3s ease, opacity 0.3s ease;
+/* ================= LOGO ================= */
+
+/* Logo dominates the tile */
+.edu-tile-logo {
+  width: 80%;
+  max-width: 340px;
+  max-height: 160px;
+
+  object-fit: contain;
+  display: block;
+
+  /* optional hover polish */
+  transition: transform 0.3s ease;
 }
 
-.edu-tile:hover .edu-logo {
-  filter: grayscale(0%);
-  opacity: 1;
+.edu-tile:hover .edu-tile-logo {
+  transform: scale(1.03);
 }
 
+/* ================= TEXT ================= */
 
-.edu-title {
-  font-size: 20px;
-  font-weight: 700;
+.edu-tile-text h3 {
+  font-size: 19px;
+  font-weight: 800;
   color: #111827;
+  line-height: 1.25;
+  margin: 4px 0 0;
 }
 
-.edu-explore {
-  margin-top: 26px;
+/* ================= BUTTON ================= */
+
+.edu-tile-btn {
+  margin-top: 6px;
   padding: 8px 22px;
+
   border-radius: 999px;
   border: 1px solid #e5e7eb;
   background: #ffffff;
+
+  color: #111827;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
+
   cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.edu-explore:hover {
+.edu-tile-btn:hover {
   background: #f9fafb;
-}
-
-/* ================= EDUCATION MODAL ================= */
-
-.edu-modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-  z-index: 5000;
-  transition: opacity 0.25s ease;
-}
-
-.edu-modal.active {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.edu-modal-panel {
-  width: min(760px, 100%);
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 36px 40px;
-  position: relative;
-}
-
-.edu-close {
-  position: absolute;
-  top: 18px;
-  right: 22px;
-  font-size: 22px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.edu-modal-title {
-  font-size: 24px;
-  font-weight: 800;
-}
-
-.edu-modal-degree {
-  margin-top: 6px;
-  font-size: 15px;
-}
-
-.edu-modal-meta {
-  margin-top: 4px;
-  font-size: 13px;
-  color: #6b7280;
-}
-
-.edu-grade {
-  margin-top: 14px;
-  display: inline-block;
-  padding: 6px 14px;
-  border-radius: 999px;
-  background: #f3f4f6;
-  font-size: 13px;
-}
-
-.edu-modal-section {
-  margin-top: 32px;
-}
-
-.edu-modal-section h4 {
-  font-size: 15px;
-  font-weight: 800;
-  margin-bottom: 14px;
-}
-
-.edu-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.edu-chip {
-  padding: 6px 14px;
-  border-radius: 999px;
-  background: #f3f4f6;
-  font-size: 12px;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
 }
