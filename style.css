@@ -549,155 +549,72 @@ body {
 .proj-arrow.left { left: 20px; }
 .proj-arrow.right { right: 20px; }
 
-/* ================= EDUCATION TILES ================= */
-
-.section-title-center{
-  text-align: center;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 /* =====================================================
-   EDUCATION SECTION — TILE STYLE (REFERENCE MATCH)
+   EDUCATION — SQUARE LOGO TILES (MATCH EXPERIENCE)
    ===================================================== */
 
-/* Section spacing */
-.education-section {
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
-
-/* Center the "Education" heading */
+/* Center heading */
 .section-title-center {
   text-align: center;
   margin-bottom: 36px;
 }
 
-/* Grid layout for tiles */
-.education-tiles {
+/* Grid like Experience logos */
+.education-logo-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(420px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 260px));
+  gap: 36px;
   justify-content: center;
-  align-items: stretch;
+  align-items: center;
 }
 
-/* Responsive: stack on smaller screens */
-@media (max-width: 900px) {
-  .education-tiles {
-    grid-template-columns: minmax(300px, 1fr);
-  }
-}
+/* Square tile */
+.edu-logo-tile {
+  width: 100%;
+  aspect-ratio: 1 / 1;
 
-/* ================= TILE ================= */
-
-.edu-tile {
-  position: relative;
   background: #ffffff;
-  border-radius: 24px;
-  min-height: 280px;
-  overflow: hidden;
-
-  box-shadow:
-    0 12px 36px rgba(0, 0, 0, 0.08);
-
-  transition:
-    transform 0.28s ease,
-    box-shadow 0.28s ease;
-}
-
-.edu-tile:hover {
-  transform: translateY(-6px);
-  box-shadow:
-    0 22px 64px rgba(0, 0, 0, 0.12);
-}
-
-/* Subtle background treatment (premium feel) */
-.edu-tile-bg {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(
-      1000px 360px at 50% -20%,
-      rgba(17, 24, 39, 0.06),
-      transparent 60%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(17, 24, 39, 0.03),
-      rgba(17, 24, 39, 0.00)
-    );
-  pointer-events: none;
-}
-
-/* Content container */
-.edu-tile-content {
-  position: relative;
-  height: 100%;
-  padding: 44px 40px 36px;
+  border-radius: 20px;
+  border: none;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 16px;
-
-  text-align: center;
-}
-
-/* ================= LOGO ================= */
-
-/* Logo dominates the tile */
-.edu-tile-logo {
-  width: 80%;
-  max-width: 340px;
-  max-height: 160px;
-
-  object-fit: contain;
-  display: block;
-
-  /* optional hover polish */
-  transition: transform 0.3s ease;
-}
-
-.edu-tile:hover .edu-tile-logo {
-  transform: scale(1.03);
-}
-
-/* ================= TEXT ================= */
-
-.edu-tile-text h3 {
-  font-size: 19px;
-  font-weight: 800;
-  color: #111827;
-  line-height: 1.25;
-  margin: 4px 0 0;
-}
-
-/* ================= BUTTON ================= */
-
-.edu-tile-btn {
-  margin-top: 6px;
-  padding: 8px 22px;
-
-  border-radius: 999px;
-  border: 1px solid #e5e7eb;
-  background: #ffffff;
-
-  color: #111827;
-  font-size: 13px;
-  font-weight: 700;
+  gap: 14px;
 
   cursor: pointer;
+
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
   transition:
-    background 0.2s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
-.edu-tile-btn:hover {
-  background: #f9fafb;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+/* Hover behavior identical to Experience tiles */
+.edu-logo-tile:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.12);
+}
+
+/* Logo dominates tile */
+.edu-logo-tile img {
+  max-width: 70%;
+  max-height: 70%;
+  object-fit: contain;
+}
+
+/* Explore text (subtle, secondary) */
+.edu-logo-tile span {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  opacity: 0.85;
+}
+
+/* Mobile spacing */
+@media (max-width: 600px) {
+  .education-logo-grid {
+    gap: 24px;
+  }
 }
