@@ -346,75 +346,48 @@
     </div>
 </section>
 
-<!-- ================= EDUCATION ================= -->
-<section id="education" class="section experience-section">
-    <h2>Education</h2>
+<section id="education" class="section">
+  <h2 class="section-title">Education</h2>
 
-    <div class="exp-grid">
+  <div class="education-grid">
 
-        <!-- University of Stuttgart -->
-        <article class="exp-card">
-            <div class="exp-bg exp-bg-edu"></div>
+    <!-- Education Card 1 -->
+    <div class="edu-card">
+      <div class="edu-card-inner">
+        <div class="edu-logo">
+          <img src="images/uni.png" alt="University of Stuttgart">
+        </div>
 
-            <div class="exp-overlay">
-                <img src="images/uni.png" class="edu-logo" alt="University of Stuttgart">
+        <h3 class="edu-university">Universität Stuttgart</h3>
+        <p class="edu-degree">M.Sc. Electrical Engineering</p>
+        <p class="edu-duration">Oct 2021 – Nov 2024 · Germany</p>
 
-                <div class="exp-overlay-title">
-                    University of Stuttgart
-                </div>
-
-                <div class="exp-overlay-subtitle">
-                    M.Sc. Electrical Engineering<br>
-                    Robotics & Autonomous Systems
-                </div>
-
-                <button class="exp-btn"
-                    data-title="M.Sc. Electrical Engineering – Robotics & Autonomous Systems"
-                    data-dates="University of Stuttgart · 2022 – 2024"
-                    data-image="images/uni.png"
-                    data-points='[
-                        "Specialization in Robotics, Autonomous Systems, and Intelligent Control",
-                        "Master’s thesis focused on SLAM, perception, and autonomous navigation",
-                        "Core coursework: SLAM, Sensor Fusion, Robot Perception, Control Systems",
-                        "Extensive hands-on work with ROS / ROS2, Gazebo, Python, C++, Linux",
-                        "Strong academic alignment with robotics research and industry"
-                    ]'>
-                    Explore
-                </button>
-            </div>
-        </article>
-
-        <!-- VTU -->
-        <article class="exp-card">
-            <div class="exp-bg exp-bg-edu"></div>
-
-            <div class="exp-overlay">
-                <img src="images/vtu.png" class="edu-logo" alt="VTU">
-
-                <div class="exp-overlay-title">
-                    Visvesvaraya Technological University
-                </div>
-
-                <div class="exp-overlay-subtitle">
-                    B.E. Electronics & Communication Engineering
-                </div>
-
-                <button class="exp-btn"
-                    data-title="B.E. Electronics & Communication Engineering"
-                    data-dates="VTU · 2015 – 2019"
-                    data-image="images/vtu.png"
-                    data-points='[
-                        "Strong foundation in electronics, embedded systems, and control theory",
-                        "Coursework in DSP, Control Systems, Communication Systems",
-                        "Hands-on labs with microcontrollers, sensors, and signal processing",
-                        "Final-year project involving embedded and communication systems"
-                    ]'>
-                    Explore
-                </button>
-            </div>
-        </article>
-
+        <button class="edu-btn"
+          onclick="openEduModal('stuttgart')">
+          Explore
+        </button>
+      </div>
     </div>
+
+    <!-- Education Card 2 -->
+    <div class="edu-card">
+      <div class="edu-card-inner">
+        <div class="edu-logo">
+          <img src="images/vtu.png" alt="VTU">
+        </div>
+
+        <h3 class="edu-university">VTU</h3>
+        <p class="edu-degree">B.E. Electronics & Communication</p>
+        <p class="edu-duration">Jul 2015 – Jun 2019 · India</p>
+
+        <button class="edu-btn"
+          onclick="openEduModal('vtu')">
+          Explore
+        </button>
+      </div>
+    </div>
+
+  </div>
 </section>
 
 
@@ -438,6 +411,15 @@
         </div>
     </div>
 </div>
+
+<div id="edu-modal" class="edu-modal">
+  <div class="edu-modal-content">
+    <span class="edu-close" onclick="closeEduModal()">&times;</span>
+
+    <div id="edu-modal-body"></div>
+  </div>
+</div>
+
 
 <!-- ================= SCRIPT ================= -->
 <script>
@@ -540,6 +522,58 @@ document.querySelectorAll(".proj-btn").forEach(btn => {
         document.body.style.overflow = "hidden";
     });
 });
+</script>
+
+<script>
+const educationData = {
+  stuttgart: `
+    <h3>Universität Stuttgart</h3>
+    <p><strong>Degree:</strong> M.Sc. Electrical Engineering</p>
+    <p><strong>Duration:</strong> Oct 2021 – Nov 2024</p>
+    <p><strong>Grade:</strong> 1.7 / 5.0</p>
+
+    <h4>Master’s Thesis</h4>
+    <p>
+      <strong>SLAM-Based Autonomous Navigation for Mobile Robots</strong><br>
+      ROS2, Gazebo, Multi-Sensor Fusion, YOLOv8, MQTT
+    </p>
+
+    <h4>Selected Coursework</h4>
+    <ul>
+      <li>Robotics & Autonomous Systems</li>
+      <li>Algorithms & Data Structures</li>
+      <li>Artificial Intelligence & Machine Learning</li>
+      <li>Deep Learning</li>
+      <li>Control Systems</li>
+      <li>Embedded Systems</li>
+      <li>Pattern Recognition</li>
+    </ul>
+  `,
+
+  vtu: `
+    <h3>Visvesvaraya Technological University</h3>
+    <p><strong>Degree:</strong> B.E. Electronics & Communication</p>
+    <p><strong>Duration:</strong> Jul 2015 – Jun 2019</p>
+
+    <h4>Core Coursework</h4>
+    <ul>
+      <li>Embedded Systems</li>
+      <li>Digital Signal Processing</li>
+      <li>Computer Engineering Fundamentals</li>
+      <li>Verilog & Digital Design</li>
+      <li>Engineering Mathematics</li>
+    </ul>
+  `
+};
+
+function openEduModal(key) {
+  document.getElementById("edu-modal-body").innerHTML = educationData[key];
+  document.getElementById("edu-modal").classList.add("active");
+}
+
+function closeEduModal() {
+  document.getElementById("edu-modal").classList.remove("active");
+}
 </script>
 
 
