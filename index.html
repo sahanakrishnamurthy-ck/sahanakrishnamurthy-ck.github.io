@@ -432,6 +432,13 @@ document.querySelectorAll(".intern-btn").forEach(btn => {
     });
 });
 
+document.querySelectorAll(".edu-logo-tile").forEach(btn => {
+    btn.addEventListener("click", () => {
+        openModal(btn);
+    });
+});
+
+
 /* ================= MODAL HANDLER ================= */
 function openModal(btn) {
     document.getElementById("modal-title").textContent = btn.dataset.title;
@@ -515,11 +522,7 @@ document.querySelectorAll(".proj-btn").forEach(btn => {
     });
 });
 
-document.querySelectorAll(".edu-logo-tile").forEach(tile => {
-  tile.addEventListener("click", () => {
-    openModal(tile);
-  });
-});
+
 
 </script>
 
