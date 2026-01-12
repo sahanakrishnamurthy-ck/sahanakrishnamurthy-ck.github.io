@@ -550,204 +550,93 @@ body {
 .proj-arrow.right { right: 20px; }
 
 /* =========================
-   EDUCATION SECTION
+   EDUCATION TILES (Like Experience)
 ========================= */
 .education-section {
-  max-width: 900px;
-  margin: 120px auto 0 auto;
-  padding: 0 20px;
+    max-width: 1100px;
+    margin: 120px auto 0 auto;
+    padding: 0 20px;
+    text-align: center;
 }
 
 .education-section h2 {
-  text-align: center;
-  font-size: 36px;
-  font-weight: 800;
-  margin-bottom: 40px;
-  color: #111827;
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 32px;
+    color: #111827;
 }
 
-/* Timeline layout */
-.edu-timeline {
-  position: relative;
-  padding-left: 32px;
+/* Grid */
+.edu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
 }
 
-.edu-timeline::before {
-  content: "";
-  position: absolute;
-  left: 10px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: #e5e7eb;
+@media (max-width: 1024px) {
+    .edu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-/* Item */
-.edu-item {
-  position: relative;
-  margin-bottom: 48px;
-}
-
-.edu-marker {
-  position: absolute;
-  left: 0;
-  top: 10px;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #4ade80;
-}
-
-/* Header row (logo + text) */
-.edu-content {
-  padding-left: 28px;
-}
-
-.edu-header {
-  display: grid;
-  grid-template-columns: 56px 1fr;
-  gap: 14px;
-  align-items: start;
-  margin-bottom: 10px;
-}
-
-/* Logo: subtle grayscale */
-.edu-logo {
-  width: 56px;
-  height: 56px;
-  object-fit: contain;
-  filter: grayscale(1);
-  opacity: 0.75;
-  transform: translateY(2px);
-}
-
-.edu-content h3 {
-  font-size: 20px;
-  font-weight: 800;
-  margin-bottom: 4px;
-  color: #111827;
-}
-
-.edu-institute {
-  font-size: 15px;
-  font-weight: 600;
-  color: #374151;
-}
-
-.edu-duration {
-  font-size: 14px;
-  color: #6b7280;
-  margin-top: 2px;
-  margin-bottom: 8px;
-}
-
-/* GPA line (optional display) */
-.edu-gpa {
-  font-size: 14px;
-  color: #374151;
-  margin-top: 6px;
-}
-
-.edu-gpa strong {
-  color: #111827;
-}
-
-.edu-gpa-note {
-  font-size: 12px;
-  color: #6b7280;
-  margin-left: 6px;
-}
-
-.edu-desc {
-  font-size: 15px;
-  line-height: 1.7;
-  color: #374151;
-  margin-bottom: 12px;
-}
-
-.edu-highlights {
-  padding-left: 18px;
-  display: grid;
-  gap: 8px;
-  font-size: 14px;
-  color: #374151;
-  margin-bottom: 14px;
-}
-
-/* =========================
-   COURSEWORK ACCORDION
-========================= */
-.edu-accordion {
-  border: 1px solid #e5e7eb;
-  border-radius: 14px;
-  padding: 0;
-  overflow: hidden;
-  background: #ffffff;
-}
-
-.edu-accordion-summary {
-  list-style: none;
-  cursor: pointer;
-  user-select: none;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 14px 16px;
-  font-weight: 800;
-  color: #111827;
-
-  background: #f9fafb;
-}
-
-.edu-accordion summary::-webkit-details-marker {
-  display: none;
-}
-
-.edu-accordion-icon {
-  transition: transform 180ms ease;
-  color: #111827;
-  opacity: 0.85;
-}
-
-.edu-accordion[open] .edu-accordion-icon {
-  transform: rotate(180deg);
-}
-
-.edu-accordion-body {
-  padding: 14px 16px 16px 16px;
-}
-
-.edu-course-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-.edu-course {
-  font-size: 13px;
-  font-weight: 700;
-  color: #111827;
-
-  padding: 8px 10px;
-  border-radius: 999px;
-
-  background: rgba(17, 24, 39, 0.06);
-  border: 1px solid rgba(17, 24, 39, 0.10);
-}
-
-.edu-course-note {
-  font-size: 12px;
-  color: #6b7280;
-  line-height: 1.55;
-}
-
-/* Mobile */
 @media (max-width: 640px) {
-  .edu-timeline { padding-left: 24px; }
-  .edu-header { grid-template-columns: 46px 1fr; }
-  .edu-logo { width: 46px; height: 46px; }
-  .edu-content h3 { font-size: 18px; }
+    .edu-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Card */
+.edu-card {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    min-height: 220px;
+    background: linear-gradient(135deg, #0f172a, #111827);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Overlay */
+.edu-overlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 22px;
+    text-align: center;
+    color: #ffffff;
+
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.75),
+        rgba(0,0,0,0.45),
+        rgba(0,0,0,0.25)
+    );
+}
+
+/* Logo */
+.edu-logo {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    margin-bottom: 14px;
+    filter: grayscale(1);
+    opacity: 0.9;
+}
+
+/* Text */
+.edu-overlay h3 {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.edu-degree {
+    font-size: 14px;
+    line-height: 1.4;
+    opacity: 0.9;
+    margin-bottom: 14px;
 }

@@ -348,126 +348,69 @@
 
 <!-- ================= EDUCATION ================= -->
 <section id="education" class="section education-section">
-  <h2>Education</h2>
+    <h2>Education</h2>
 
-  <div class="edu-timeline">
+    <div class="edu-grid">
 
-    <!-- MASTER'S -->
-    <div class="edu-item">
-      <div class="edu-marker"></div>
+        <!-- MSc Stuttgart -->
+        <article class="edu-card">
+            <div class="edu-bg"></div>
 
-      <div class="edu-content">
-        <div class="edu-header">
-          <img class="edu-logo" src="images/uni.png" alt="Universität Stuttgart logo">
-          <div>
-            <h3>Master of Science (M.Sc.) in Electrical Engineering</h3>
-            <p class="edu-institute">University of Stuttgart, Germany</p>
-            <p class="edu-duration">2022 – 2024</p>
+            <div class="edu-overlay">
+                <img src="images/uni.png" class="edu-logo" alt="University of Stuttgart">
 
-            <!-- GPA (optional) -->
-            <p class="edu-gpa">
-              Grade / GPA: <strong>2.1</strong>
-              <span class="edu-gpa-note">(replace “—” with your grade if you want to show it)</span>
-            </p>
-          </div>
-        </div>
+                <h3>University of Stuttgart</h3>
+                <p class="edu-degree">
+                    M.Sc. Electrical Engineering<br>
+                    Robotics & Autonomous Systems
+                </p>
 
-        <p class="edu-desc">
-          Specialization in robotics, autonomous systems, and intelligent control with a focus on SLAM, perception,
-          sensor fusion, and AI-driven robotic systems.
-        </p>
-
-        <ul class="edu-highlights">
-          <li>Master’s Thesis: <strong>Autonomous Mobile Robot with SLAM & Perception</strong></li>
-          <li>Focus Areas: Robotics, Autonomous Navigation, Control Systems, Machine Learning</li>
-          <li>Tools: ROS / ROS2, Gazebo, Python, C++, Linux</li>
-        </ul>
-
-        <!-- Coursework Accordion -->
-        <details class="edu-accordion">
-          <summary class="edu-accordion-summary">
-            Selected Coursework
-            <span class="edu-accordion-icon" aria-hidden="true">▾</span>
-          </summary>
-
-          <div class="edu-accordion-body">
-            <div class="edu-course-grid">
-              <span class="edu-course">Robotics</span>
-              <span class="edu-course">Autonomous Systems</span>
-              <span class="edu-course">SLAM / State Estimation</span>
-              <span class="edu-course">Sensor Fusion</span>
-              <span class="edu-course">Computer Vision</span>
-              <span class="edu-course">Control Systems</span>
-              <span class="edu-course">Machine Learning</span>
-              <span class="edu-course">Embedded Systems</span>
+                <button class="exp-btn"
+                    data-title="M.Sc. Electrical Engineering – Robotics & Autonomous Systems"
+                    data-dates="University of Stuttgart, Germany · 2022 – 2024"
+                    data-image="images/uni-stuttgart-campus.jpg"
+                    data-points='[
+                        "Specialization in robotics, autonomous systems, and intelligent control",
+                        "Master’s Thesis on autonomous mobile robots with SLAM and perception",
+                        "Core subjects: SLAM, Sensor Fusion, Robot Perception, Control Systems",
+                        "Hands-on experience with ROS / ROS2, Gazebo, Python, C++, Linux",
+                        "Strong academic focus aligned with research and industry robotics"
+                    ]'>
+                    Explore
+                </button>
             </div>
+        </article>
 
-            <p class="edu-course-note">
-              Replace the items above with your actual course titles as per your transcript.
-            </p>
-          </div>
-        </details>
-      </div>
-    </div>
+        <!-- B.E. VTU -->
+        <article class="edu-card">
+            <div class="edu-bg"></div>
 
-    <!-- BACHELOR'S -->
-    <div class="edu-item">
-      <div class="edu-marker"></div>
+            <div class="edu-overlay">
+                <img src="images/vtu.png" class="edu-logo" alt="VTU">
 
-      <div class="edu-content">
-        <div class="edu-header">
-          <img class="edu-logo" src="images/vtu.png" alt="VTU logo">
-          <div>
-            <h3>Bachelor of Engineering (B.E.) in Electronics & Communication Engineering</h3>
-            <p class="edu-institute">Visvesvaraya Technological University (VTU), India</p>
-            <p class="edu-duration">2015 – 2019</p>
+                <h3>Visvesvaraya Technological University</h3>
+                <p class="edu-degree">
+                    B.E. Electronics & Communication Engineering
+                </p>
 
-            <!-- GPA (optional) -->
-            <p class="edu-gpa">
-              Grade / GPA: <strong>2</strong>
-              <span class="edu-gpa-note">(replace “—” with your grade if you want to show it)</span>
-            </p>
-          </div>
-        </div>
-
-        <p class="edu-desc">
-          Strong foundation in electronics, embedded systems, communication systems, control theory, and applied mathematics.
-        </p>
-
-        <ul class="edu-highlights">
-          <li>Core Topics: Embedded Systems, Digital Signal Processing, Control Theory</li>
-          <li>Hands-on: Microcontrollers, Sensors, Communication Protocols</li>
-        </ul>
-
-        <!-- Coursework Accordion -->
-        <details class="edu-accordion">
-          <summary class="edu-accordion-summary">
-            Selected Coursework
-            <span class="edu-accordion-icon" aria-hidden="true">▾</span>
-          </summary>
-
-          <div class="edu-accordion-body">
-            <div class="edu-course-grid">
-              <span class="edu-course">Embedded Systems</span>
-              <span class="edu-course">Digital Signal Processing</span>
-              <span class="edu-course">Control Theory</span>
-              <span class="edu-course">Communication Systems</span>
-              <span class="edu-course">Microcontrollers</span>
-              <span class="edu-course">Signals & Systems</span>
-              <span class="edu-course">Digital Electronics</span>
-              <span class="edu-course">Computer Networks</span>
+                <button class="exp-btn"
+                    data-title="B.E. Electronics & Communication Engineering"
+                    data-dates="Visvesvaraya Technological University, India · 2015 – 2019"
+                    data-image="images/vtu-campus.jpg"
+                    data-points='[
+                        "Strong foundation in electronics, embedded systems, and control theory",
+                        "Core coursework in DSP, Control Systems, Communication Systems",
+                        "Hands-on labs with microcontrollers, sensors, and signal processing",
+                        "Final year project involving embedded and communication systems"
+                    ]'>
+                    Explore
+                </button>
             </div>
+        </article>
 
-            <p class="edu-course-note">
-              Replace the items above with your actual course titles.
-            </p>
-          </div>
-        </details>
-      </div>
     </div>
-
-  </div>
 </section>
+
 
 
 </main>
