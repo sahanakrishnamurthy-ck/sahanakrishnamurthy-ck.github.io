@@ -796,3 +796,79 @@ body {
   0%, 50%, 100% { opacity: 1; }
   25%, 75% { opacity: 0; }
 }
+
+
+/* =========================
+   SKILLS (TILE GRID)
+========================= */
+
+.skills-section {
+  max-width: 1100px;
+  margin: 120px auto 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.skills-section h2 {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 34px;
+  color: #111827;
+}
+
+/* Grid like your reference (centered cards) */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 28px;
+  align-items: stretch;
+}
+
+/* Card */
+.skill-tile {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 22px 18px;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.08);
+  border: 1px solid #eef2f7;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.skill-tile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 60px rgba(0,0,0,0.12);
+}
+
+/* Icon size normalization (THIS fixes the messy look) */
+.skill-tile img {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  margin-bottom: 14px;
+  opacity: 0.95;
+}
+
+/* Text */
+.skill-tile p {
+  font-size: 14px;
+  line-height: 1.35;
+  color: #111827;
+  font-weight: 600;
+  max-width: 18ch; /* forces nice wrapping like your reference */
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  .skill-tile p {
+    max-width: none;
+  }
+}
