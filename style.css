@@ -872,3 +872,86 @@ body {
     max-width: none;
   }
 }
+
+
+/* =========================
+   HIGH-END NVIDIA SIM BACKGROUND
+========================= */
+
+body {
+  background: #eef2f7;
+}
+
+/* Global background wrapper */
+.global-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* -------------------------
+   1) Depth Gradient
+------------------------- */
+.bg-gradient {
+  position: absolute;
+  inset: -20%;
+
+  background:
+    radial-gradient(1000px 600px at 50% 30%, rgba(255,255,255,0.9), transparent 70%),
+    radial-gradient(900px 700px at 20% 20%, rgba(59,130,246,0.18), transparent 65%),
+    radial-gradient(900px 700px at 80% 25%, rgba(74,222,128,0.18), transparent 65%),
+    linear-gradient(135deg, #e6edf5, #eef3fa, #f6f9ff);
+
+  animation: drift 22s ease-in-out infinite;
+}
+
+@keyframes drift {
+  0%   { transform: translate3d(0,0,0) scale(1); }
+  50%  { transform: translate3d(-1.5%,1.2%,0) scale(1.04); }
+  100% { transform: translate3d(0,0,0) scale(1); }
+}
+
+/* -------------------------
+   2) Crisp Simulation Grid
+------------------------- */
+.bg-grid {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(rgba(0,0,0,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.08) 1px, transparent 1px);
+
+  background-size: 48px 48px;
+
+  opacity: 0.45;
+
+  mask-image: radial-gradient(circle at 50% 40%, black 60%, transparent 95%);
+}
+
+/* -------------------------
+   3) Central Light Bloom
+------------------------- */
+.bg-glow {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(800px 600px at 50% 35%, rgba(255,255,255,0.95), transparent 70%),
+    radial-gradient(1000px 800px at 50% 110%, rgba(255,255,255,0.7), transparent 75%);
+
+  mix-blend-mode: soft-light;
+  opacity: 0.9;
+}
+
+/* Ensure content stays above */
+section, header, footer {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+
