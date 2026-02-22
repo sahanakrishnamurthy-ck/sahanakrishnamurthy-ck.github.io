@@ -295,6 +295,9 @@
             data-title="Autonomous Mobile Robot with SLAM & Perception"
             data-dates="Master’s Thesis · University of Stuttgart"
             data-image="images/bot.jpeg"
+            data-technologies='[
+        "ROS", "Autonomous Navigation", "SLAM", "Sensor Fusion", "LiDAR Processing", "YOLOv8",  "MoveIt" , "Gazebo" , "MQTT" 
+      ]'
             data-points='[
                 "Designed and implemented a complete autonomous navigation pipeline using ROS and ROS2",
                 "Integrated LiDAR, RGB-D camera, and wheel odometry for real-time SLAM",
@@ -302,7 +305,9 @@
                 "Developed YOLO-based perception for object awareness",
                 "Enabled full autonomous navigation including mapping, localization, and planning",
                 "Validated the system in simulation and real-world experiments"
-            ]'>
+            ]'
+            data-link="https://github.com/sahanakrishnamurthy-ck/Thesis"
+            >
 
             <img src="images/thesis.png" alt="Master Thesis Project">
 
@@ -317,18 +322,27 @@
             </div>
         </div>
 
+
+
+
+
+
         <!-- PROJECT SLIDE -->
         <div class="project-slide"
             data-title="Failure Mode Identification in Robotic Systems"
             data-dates="Research Project · University of Stuttgart"
             data-image="images/research.png"
+            data-technologies='[
+        "Prompt engineering", "Large Language Model", "ROS", "Docker", "Knowledge Graph"
+      ]'
             data-points='[
                 "Analyzed failure modes in robotic manipulation tasks",
                 "Worked with a Franka Emika Panda robot",
                 "Investigated LLM-based reasoning for fault explanation",
                 "Designed structured representations for failure diagnostics",
                 "Improved recovery strategies using AI-assisted reasoning"
-            ]'>
+            ]'
+            >
 
             <img src="images/research.png" alt="Research Project">
 
@@ -343,6 +357,10 @@
             </div>
         </div>
 
+
+
+
+
         <!-- PROJECT SLIDE -->
         <div class="project-slide"
             data-title="Digital Twin for Robotic Condition Monitoring"
@@ -354,7 +372,8 @@
                 "Implemented anomaly detection for system health monitoring",
                 "Analyzed performance degradation and fault patterns",
                 "Demonstrated predictive maintenance capabilities"
-            ]'>
+            ]'
+            >
 
             <img src="images/twin.png" alt="Digital Twin Project">
 
@@ -371,11 +390,22 @@
 
 
 
+
         <!-- PROJECT: Audi Ignis Ring – Corporate Campus Challenge -->
+         <!--
 <div class="project-slide"
      data-title="Audi Ignis Ring – Corporate Campus Challenge"
       data-dates="Innovation & Concept Project · Audi Sport"
       data-image="images/demo_car.jpg"
+      data-technologies='[
+        "Human–Vehicle Interaction",
+        "User-Centered Design",
+        "Rapid Prototyping",
+        "3D Printing",
+        "Gesture Interaction",
+        "Design Thinking",
+        "Market Research"
+      ]'
     data-points='[
          "Selected participant in Audi’s Corporate Campus Challenge, contributing to an industry-led innovation project.",
         "Co-developed the Audi Ignis Ring concept, a digital premium wearable experience targeting Gen Z customers.",
@@ -385,7 +415,9 @@
         "Applied user-centric design principles, rapid prototyping, and iterative feedback cycles.",
         "Collaborated in a multidisciplinary team combining engineering, design, and business perspectives.",
         "Received positive feedback from Audi Sport, with interest in exploring future real-world implementation."
-    ]'>
+    ]'
+    data-link="https://github.com/Bhushan-Bhad/vehicle-api"
+    >
 
     <img src="images/demo_car.jpg" alt="Audi Ignis Ring Concept">
 
@@ -402,13 +434,65 @@
         <button class="proj-btn">Read More</button>
     </div>
 </div>
+-->
+
+<!-- PROJECT: Intelligent Floor-Guided Parking -->
+    <div class="project-slide"
+      data-title="Intelligent Floor-Guided Parking System"
+      data-dates="Computer Vision Project · Autonomous Parking"
+      data-image="images/demo_car.jpg"
+      data-technologies='[
+        "Computer Vision",
+        "OpenCV",
+        "Python",
+        "Lane Detection",
+        "Image Processing",
+        "Autonomous Navigation",
+        "Real-Time Control"
+      ]'
+      data-points='[
+        "Developed an intelligent parking system that guides a vehicle using floor-based visual markers.",
+        "Implemented computer vision algorithms to detect floor guidance lines and parking indicators in real time.",
+        "Designed robust image preprocessing pipelines including color thresholding, edge detection, and perspective transformation.",
+        "Estimated vehicle alignment and steering commands based on detected guidance patterns.",
+        "Validated the system through real-time experiments demonstrating reliable autonomous parking behavior."
+      ]'
+      data-link="https://github.com/Bhushan-Bhad/intelligent-floor-guided-parking"
+    >
+
+      <img src="images/demo_car.jpg" alt="Intelligent Floor-Guided Parking">
+
+      <div class="project-overlay">
+        <h3>Intelligent Floor-Guided Parking</h3>
+        <p>Computer Vision · Autonomous Parking</p>
+        <p class="project-desc">
+          Vision-based autonomous parking system that follows
+          floor guidance markers using real-time image processing
+          and control logic.
+        </p>
+        <button class="proj-btn">Read More</button>
+      </div>
+    </div>
+
+
+
 
 
 <!-- PROJECT: Vehicle API -->
     <div class="project-slide"
       data-title="Vehicle API – Backend System for Vehicle Data & Services"
       data-dates="Software Engineering Project · REST API Development"
-      data-image="images/testbench.jp567"
+      data-image="images/software_arch.jpg"
+      data-technologies='[
+        "REST APIs",
+        "Python",
+        "FastAPI",
+        "Backend Development",
+        "API Design",
+        "Data Validation",
+        "JSON",
+        "HTTP"
+      ]'
     data-points='[
         "Designed and implemented a backend Vehicle API to manage and expose vehicle-related data and services.",
         "Developed RESTful endpoints for vehicle information, status queries, and service interactions.",
@@ -416,7 +500,9 @@
         "Implemented data validation and structured payloads to ensure robustness and consistency.",
         "Tested API endpoints locally to verify correctness, reliability, and scalability.",
         "Version-controlled the project using Git and published the codebase on GitHub."
-      ]'>
+      ]'
+       data-link="https://github.com/Bhushan-Bhad/vehicle-api"
+       >
 
 
      <img src="images/testbench.jpg" alt="Vehicle API Project">
@@ -433,11 +519,19 @@
       </div>
     </div>
 
+
+
+
+
+
         <!-- BIN PICKING CELL CONTROL PROJECT -->
 <div class="project-slide"
     data-title="Bin Picking Cell Control System"
     data-dates="ROS2 Humble · Docker · Flask · HMI · macOS"
     data-image="images/bin.png"
+    data-technologies='[
+        "ROS2 (Humble)", "Docker & Docker Compose", " REST API Integration", "Service-Client Communication", "Industrial Automation Simulation", "Web-Based HMI"
+      ]'
     data-points='[
         "Designed and simulated an industrial bin picking cell control system using ROS2 Humble",
         "Containerized the complete ROS2 and Python stack using Docker and Docker Compose for macOS compatibility",
@@ -449,7 +543,9 @@
         "Resolved macOS browser-to-Docker networking issues using host.docker.internal and IP-based fallback",
         "Structured the system with modular launch scripts enabling clear separation of ROS nodes, APIs, and GUI",
         "Validated full system reproducibility using Docker on macOS with real-time state visualization"
-    ]'>
+    ]'
+    data-link="https://github.com/sahanakrishnamurthy-ck/bin_picking_project"
+    >
 
     <img src="images/bin.png" alt="Bin Picking Cell Control System">
 
@@ -472,13 +568,24 @@
             data-title="AWS DeepRacer – Reinforcement Learning for Autonomous Racing"
             data-dates="Competition Project · Audi Sport / AWS DeepRacer"
             data-image="images/AWS-DeepRacer-car.jpg"
+            data-technologies='[
+        "Reinforcement Learning",
+        "AWS DeepRacer",
+        "Reward Function Design",
+        "Markov Decision Processes",
+        "Python",
+        "Simulation-Based Training",
+        "Hyperparameter Tuning"
+      ]'
             data-points='[
                 "Designed and optimized a custom reward function for autonomous racing using reinforcement learning.",
                 "Trained DeepRacer agents in simulation by tuning action space, speed control, and steering penalties.",
                 "Analyzed episode metrics including progress, lap time, and off-track events to improve policy convergence.",
                 "Applied reinforcement learning concepts such as Markov Decision Processes and policy optimization.",
                 "Validated trained models through competition-level evaluation and benchmarking."
-            ]'>
+            ]'
+            data-link="https://github.com/Bhushan-Bhad/aws-deepracer-rl"
+            >
 
             <img src="images/AWS-DeepRacer-car.jpg" alt="AWS DeepRacer">
 
@@ -534,7 +641,7 @@
         class="exp-btn exp-hover-card"
         data-title="B.E. Electronics & Communication Engineering"
         data-dates="Jul 2015 – Jun 2019 | Visvesvaraya Technological University, India"
-        data-image="images/vtu.png"
+        data-image="images/20190624_095852.jpg"
         data-points='[
           "Focus on Embedded Systems and Signal Processing",
           "Coursework: Embedded Systems, Digital Signal Processing, Signals & Systems, Verilog, Computer Engineering Fundamentals",
@@ -699,7 +806,13 @@
 
         <div class="exp-modal-body">
             <img id="modal-image" alt="">
-            <ul id="modal-points"></ul>
+
+             <div class="modal-right">
+        <ul id="modal-points"></ul>
+
+        <div class="project-footer">
+            <div id="modal-technologies" class="modal-technologies"></div>
+            <div id="modal-link" class="modal-link"></div>
         </div>
     </div>
 </div>
@@ -800,6 +913,26 @@ document.querySelectorAll(".proj-btn").forEach(btn => {
         img.src = slide.dataset.image;
         img.style.display = "block";
 
+
+        // =====================
+        // Technologies
+        // =====================
+        const techContainer = document.getElementById("modal-technologies");
+        techContainer.innerHTML = "";
+
+        if (slide.dataset.technologies) {
+            const techList = JSON.parse(slide.dataset.technologies);
+
+            techList.forEach(tech => {
+                const span = document.createElement("span");
+                span.className = "tech-badge";
+                span.textContent = tech;
+                techContainer.appendChild(span);
+            });
+        }
+
+
+
         const list = document.getElementById("modal-points");
         list.innerHTML = "";
         JSON.parse(slide.dataset.points).forEach(p => {
@@ -807,6 +940,24 @@ document.querySelectorAll(".proj-btn").forEach(btn => {
             li.textContent = p;
             list.appendChild(li);
         });
+
+
+        // =====================
+        // GitHub Link
+        // =====================
+        const linkContainer = document.getElementById("modal-link");
+        linkContainer.innerHTML = "";
+
+        if (slide.dataset.link) {
+            const a = document.createElement("a");
+            a.href = slide.dataset.link;
+            a.target = "_blank";
+            a.rel = "noopener noreferrer";
+            a.className = "modal-project-link";
+            a.textContent = "View on GitHub";
+            linkContainer.appendChild(a);
+        }
+
 
         document.getElementById("experience-modal").classList.add("active");
         document.body.style.overflow = "hidden";
